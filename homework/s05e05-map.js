@@ -4,6 +4,7 @@
  * Во всем задании используйте методы массива .forEach и .push
  */
 
+
 /**
  * Создайте функцию, которая принимает на вход массив произвольных элементов.
  * Далее, создает новый пустой массив, заполняет его элементами из входящего и возвращает.
@@ -11,8 +12,13 @@
  * @param {any[]} inputArray - входящий массив
  * @returns {any[]}
  */
-function copy(inputArray) {
 
+function copy(inputArray) {
+    let outputArray = [];
+    inputArray.forEach(item => {
+        outputArray.push(item);
+    });
+    return outputArray;
 }
 
 /**
@@ -22,12 +28,20 @@ function copy(inputArray) {
  * @returns {number[]}
  */
 function copyAndMultiply(inputArray) {
+    let outputArray = [];
+
+    inputArray.forEach(item => {
+        let multiplyResult = item * 2;
+        outputArray.push(multiplyResult);
+    });
+
+    return outputArray;
 
 }
 
 /**
  * Функция - это значение, и его тоже можно передавать.
- * Представьте ее как набор инструкций, который можно будет выполнить при необходимости.
+ * Это набор инструкций, который можно будет выполнить позже.
  *
  * Напишите функцию <map>
  * Функция должна принимать массив элементов и вторым аргументом - функцию,
@@ -38,12 +52,20 @@ function copyAndMultiply(inputArray) {
  * @returns {any[]}
  */
 function map(inputArray, operation) {
+    let outputArray = [];
+
+    inputArray.forEach(item => {
+        outputArray.push(operation(item));
+    });
+
+    return outputArray;
 
 }
 
+
 // Пример использования функции map, после того, как она будет готова:
 function square(x) {
-  return x * x;
+    return x * x;
 }
 const numbers = [1, 5, 10];
 const squares = map(numbers, square);
@@ -55,7 +77,7 @@ const squares = map(numbers, square);
 // 1. установить зависимости командой "npm install"
 // 2. запустить тесты командой "npm run test"
 module.exports = {
-  copy,
-  copyAndMultiply,
-  map,
+    copy,
+    copyAndMultiply,
+    map,
 }
