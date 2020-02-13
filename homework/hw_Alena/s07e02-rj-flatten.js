@@ -47,6 +47,7 @@ const movieLists = [{
 ];
 
 const getAllMovieIds = function () {
+
   allVideoIdsInMovieLists = [];
 
   movieLists.forEach((movieList) => {
@@ -59,11 +60,11 @@ const getAllMovieIds = function () {
 
 }
 
-// Ожидаемый результат:
-// [ 70111470, 654356453, 65432445, 675465 ]
 console.log(getAllMovieIds());
 
 
+// Ожидаемый результат:
+// [ 70111470, 654356453, 65432445, 675465 ]
 // ------------   INSERT CODE HERE!  -----------------------------------
 // Используйте два вложенных цикла forEach для того, чтобы сложить все id елементов всех videos
 // из movieLists в плоский массив.
