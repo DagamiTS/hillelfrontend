@@ -1,0 +1,12 @@
+body{
+	margin: 0;
+
+}
+#gamefield{
+	height: 100vh;
+	background: #ccc;
+	position: relative;
+}
+#gamefield div{
+	background: #999;
+}
