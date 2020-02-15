@@ -13,6 +13,12 @@ export function createCell(x, y) {
   return cell;
 }
 
+function fieldBorders(x, y, FIELD_WIDTH, FIELD_HEIGHT) {
+  if (y === 0 || x === 0 || y === FIELD_HEIGHT-1 || x === FIELD_WIDTH-1) {
+    const element = document.getElementById(`x${x}y${y}`);
+    element.classList.add("wall");
+  }
+}
 
 export function initGamefield() {
   const gameField = document.getElementById('gamefield');
@@ -24,7 +30,7 @@ export function initGamefield() {
     for (let y = 0; y < FIELD_HEIGHT; y++) {
       const cell = createCell(x, y);
       gameField.appendChild(cell);
+      fieldBorders(x, y, FIELD_WIDTH, FIELD_HEIGHT);
     }
   }
-
 }
