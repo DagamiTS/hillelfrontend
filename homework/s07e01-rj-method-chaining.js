@@ -32,17 +32,13 @@ const newReleases = [
     "bookmark": [{ id: 432534, time: 65876586 }]
   }
 ];
+
 const getGoodReleasesIds = function() {
   // ------------ INSERT CODE HERE! -----------------------------------
   // Используйте методы filter и map в цепочке (method chaining - запомните термин!) , чтобы получить id всех видео
   // с рейтингом 5.0
-  function goodRating( element ) {
-    return element.rating === 5.0;
-  }
 
-  return newReleases
-    .filter(element => goodRating(element))
-    .map( element => element.id); // закончите это выражение
+  return newReleases // закончите это выражение
   // ------------ INSERT CODE HERE! -----------------------------------
   // Если не получается сделать за 15 минут прочтите эту статью (ENG)
   // https://gomakethings.com/chaining-array-methods-in-vanilla-js/

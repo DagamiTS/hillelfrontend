@@ -7,7 +7,6 @@ const concat = function(inputArrays) {
     // ------------ INSERT CODE HERE! ----------------------------
     // добавьте все элементы из каждого subArray в массив с результатами
     // ------------ INSERT CODE HERE! ----------------------------
-    subArray.forEach(element => results.push(element));
   });
 
   return results;
