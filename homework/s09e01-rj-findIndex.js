@@ -4,12 +4,7 @@
  * @returns {number}
  */
 function findIndex(array, qualifier) {
-    for (let i = 0; i < array.length; i++) {
-        if (qualifier(array[i])) {
-            return i;
-        }
-    }
-    return -1;
+
 }
 
 const array1 = [5, 12, 8, 130, 44];
