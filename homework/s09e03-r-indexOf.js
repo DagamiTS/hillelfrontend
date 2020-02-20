@@ -3,8 +3,13 @@
  * @param {any} item
  * @returns {number}
  */
-function indexOf(array, item) {
-
+function indexOf(array, item, startPos = 0) {
+    for (let i = startPos; i < array.length; i++) {
+        if (array[i] === item) {
+          return i;
+       }
+    }
+    return -1;
 }
 
 const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
