@@ -19,8 +19,7 @@ function startGame() {
   ];
   direction = 'right';
   initGamefield();
-
-  // TODO: add the very first Food here
+  addFood();
   nextStep();
 }
 
@@ -36,7 +35,12 @@ function handleGameFieldClick(e) {
       direction = 'right';
     }
   } else {
-    // TODO: finish click handler for horizontal movement
+    if (clickY < head.y) {
+      direction = 'up';
+    }
+    if (clickY > head.y) {
+      direction = 'down';
+    }
   }
 
 }
@@ -59,15 +63,12 @@ function addFood() {
 
   let foodX;
   let foodY;
-  // do {
-  //   foodX = Math.floor(Math.random() * configuration.FIELD_WIDTH);
-    // TODO: Finish addFood code
-    // foodY = Math.random() * configuration.;
+  do {
+    foodX = Math.floor(Math.random() * configuration.FIELD_WIDTH);
+    foodY = Math.floor(Math.random() * configuration.FIELD_HEIGHT);
+  } while (getCellClass(foodX, foodY));
 
-    // targetCell = ;
-  // } while (????getCellClass(foodX, foodY)???);
-
-  // setCellClass(, 'food')
+  setCellClass(foodX, foodY, 'food')
 
 }
 
@@ -94,11 +95,14 @@ function nextStep() {
 
   const obstacle = getCellClass(headX, headY);
   if (obstacle) {
-    // TODO: check hit and increase snake maxLength when hit a food
-    // do gameover and return otherwise.
-    clearTimeout(timeout);
-    gameOver();
-    return;
+    if(obstacle === "food") {
+      maxLength = maxLength + 1;
+      addFood();
+    } else {
+      clearTimeout(timeout);
+      gameOver();
+      return;
+    }
   }
 
   setCellClass(headX, headY, 'snake');
