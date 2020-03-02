@@ -9,8 +9,8 @@
 // возвращает true если число меньше ноля.
 
 function RandomNumber() {
-  min = -100;
-  max = 100;
+  const min = -100;
+  const max = 100;
   this.number = Math.floor(Math.random() * (max - min + 1)) + min;
   this.showNumber = function() {
     console.log("Number === " + this.number);
