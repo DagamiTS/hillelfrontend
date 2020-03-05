@@ -14,7 +14,7 @@ function ElectricKettle() {
       this.say('Already boiling');
       return;
     }
-    this.boilInterval = setInterval(this.heatUp, KETTLE_INTERVAL_MS);
+    this.boilInterval = setInterval(this.heatUp.bind(this), KETTLE_INTERVAL_MS);
   }
 
   this.heatUp = function() {
@@ -26,7 +26,7 @@ function ElectricKettle() {
       this.say('[Whistling sound]')
     }
   }
-
+  
   this.say = function(message) {
     console.log(message);
   }

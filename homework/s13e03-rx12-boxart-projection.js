@@ -80,6 +80,14 @@ const movieLists = [
 //   {"id": 70111470, "title": "Die Hard", "boxart":"http://cdn-0.nflximg.com/images/2891/DieHard150.jpg" }
 // ];
 
-const result = movieLists // закончите выражение!
+const result = movieLists.map( element => {
+  const { videos } = element;
+
+  return videos.map( innerElement => {
+    const { id, title, boxarts } = innerElement;
+    const boxart = boxarts.find( img => img.width === 150 && img.height === 200).url;
+    return { id, title, boxart };
+  });
+}).flat().reverse();
 
 console.log(result);

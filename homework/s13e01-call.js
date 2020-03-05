@@ -4,21 +4,24 @@
 // мы можем вызвать метод массива НА строке
 
 // 1. создайте пустой массив
-const array = // ВАШ КОД ТУТ
+const array = []
 
 // 2. сохраните его метод .every в константу every
-const every = // ВАШ КОД ТУТ
+const every = array.every;
 
 // 3. напишите (или найдите в прошлых заданиях)
 // нашу старую знакомую функцию isVowel, которая
 // возвращает true, если буква гласная
-const isVowel = // ВАШ КОД ТУТ
+const isVowel = function(element) {
+  const vowels = "aeiouy";
+  return (vowels.includes(element)) ? true : false;
+};
 
 // 4. проверьте, все ли буквы в строке гласные,
 // вызвав функцию every передав в this строку
 const test = 'aouiyedo';
 
-console.log(every. // ВАШ КОД ТУТ
+console.log(every.call(test, isVowel));
 
 
 // по желанию, можно записать это без промежуточных
