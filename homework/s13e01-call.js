@@ -14,7 +14,7 @@ const every = array.every;
 // возвращает true, если буква гласная
 const isVowel = function(element) {
   const vowels = "aeiouy";
-  return (vowels.includes(element)) ? true : false;
+  return !!vowels.includes(element);
 };
 
 // 4. проверьте, все ли буквы в строке гласные,
