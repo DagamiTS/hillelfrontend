@@ -18,9 +18,9 @@ const now = new Date();
 const nowISO = now.toISOString();
 console.log(nowISO);
 
-/**
- * Порядок и местонахожднение элементов всегда одинаковое.
- * Найдите и выведите в консоль целое количество секунд,
- * прошедшее с начала суток.
- */
-
+const seconds = function() {
+  const today = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 2, 0, 0, 0);
+  const difference = now - today;
+  return Math.round(difference / 1000);
+}
+console.log(seconds());

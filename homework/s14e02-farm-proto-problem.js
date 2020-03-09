@@ -37,7 +37,18 @@ console.log(animal.getLegCount());
  * Пишем 3 конструктора тут
  */
 
-function Pig /** И дальше пишем сами */
+function Pig() {
+  this.legCount = 4;
+}
+function Chicken() {
+  this.legCount = 2;
+}
+function Cow() {
+  this.legCount = 4;
+}
+function Farmer() {
+  this.legCount = 2;
+}
 
 /**
  * После того, как написали 4 функции-конструктора по одной
@@ -49,7 +60,10 @@ function Pig /** И дальше пишем сами */
  * Тогда все методы и свойства прототипа (animal) станут доступны
  * в новых екземплярах класса Pig.
  */
-Pig.prototype /** дальше сами */
+Pig.prototype = animal;
+Chicken.prototype = animal;
+Cow.prototype = animal;
+Farmer.prototype = animal;
 
 
 const animals = [];
@@ -58,11 +72,24 @@ const animals = [];
 const PIG_COUNT = 725;
 const CHICKEN_COUNT = 12300;
 const COW_COUNT = 107;
+const FARMER_COUNT = 1;
 
 /**
  * Тут будет несколько циклов, и не забудьте про фермера
  * и массив animals - заполнен
  */
+for (let i = 0; i < PIG_COUNT; i++) {
+  animals.push(new Pig());
+}
+for (let i = 0; i < CHICKEN_COUNT; i++) {
+  animals.push(new Chicken());
+}
+for (let i = 0; i < COW_COUNT; i++) {
+  animals.push(new Cow());
+}
+for (let i = 0; i < FARMER_COUNT; i++) {
+  animals.push(new Farmer());
+}
 
 
 /**
@@ -70,5 +97,6 @@ const COW_COUNT = 107;
  * который доступен в любом животном.
  * Выводим результат в консоль.
  */
-
-
+let legs = 0;
+animals.forEach( element => legs = legs + element.getLegCount());
+console.log(`Quantity of legs === ${legs}`);
