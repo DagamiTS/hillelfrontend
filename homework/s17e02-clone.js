@@ -9,9 +9,23 @@
  * @returns {any}
  */
 function clone(input) {
-
-  /** YOUR CODE HERE */
-
+  if (Array.isArray(input)) {
+    const result = [];
+    for (const value of input) {
+      result.push(value);
+    }
+    return result;
+  }
+  if (input) {
+    if (typeof(input) === "object") {
+      const result = {};
+      for (const [key, prop] of Object.entries(input)) {
+        result[key] = prop;
+      }
+      return result;
+    }
+  }
+  return input;
 }
 
 /**
@@ -93,9 +107,31 @@ assert(shallowCopy.nestedObject === obj.nestedObject, '14. nestedObject скоп
  * @returns {object}
  */
 function cloneDeep(input) {
-
-  /** YOUR CODE HERE */
-
+  if (Array.isArray(input)) {
+    const result = [];
+    for (const value of input) {
+      if (typeof(input) !== "object") {
+        result.push(value);
+      } else {
+        result.push(cloneDeep(value));
+      }
+    }
+    return result;
+  }
+  if (input) {
+    if (typeof(input) === "object") {
+      const result = {};
+      for (const [key, prop] of Object.entries(input)) {
+        if (typeof(input) !== "object") {
+          result[key] = prop;
+        } else {
+          result[key] = cloneDeep(prop);
+        }
+      }
+      return result;
+    }
+  }
+  return input;
 }
 
 const deepCopy = cloneDeep(obj);
