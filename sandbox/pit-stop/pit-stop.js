@@ -31,9 +31,25 @@ function createMechanics() {
 
 function main() {
   createMechanics();
+  
+  const car = document.getElementById("pit-stop");
+  let tankCondition = 0;
+  let wheelCounter = 0;
 
-  /** YOUR CODE HERE */
-
+  function carGo() {
+    if (tankCondition && wheelCounter === 4) {
+      car.classList.add("go");
+    }
+  }
+  
+  document.addEventListener(TANK_FULL, () => {
+    tankCondition++;
+    carGo();
+  });
+  document.addEventListener(WHEEL_INSTALLED, () => {
+    wheelCounter++;
+    carGo();
+  })
 }
 
 window.addEventListener('load', main);
