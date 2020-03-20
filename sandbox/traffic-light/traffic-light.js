@@ -40,16 +40,37 @@ function main() {
     });
   }
 
+  const colorfulDuration = 7000;
+  const yellowDuration = 3000;
+  
   function step() {
     let timerLeftGreen = setTimeout(leftGreen, 0);
-    let timerYellow = setTimeout(yellow, 7000);
-    let timerRightGreen = setTimeout( rightGreen, 10000);
-    timerYellow = setTimeout(yellow, 17000);
+    let timerYellow = setTimeout(yellow, colorfulDuration);
+    let timerRightGreen = setTimeout( rightGreen, colorfulDuration + yellowDuration);
+    timerYellow = setTimeout(yellow, colorfulDuration * 2 + yellowDuration);
   }
 
   step();
-
   let intervalId = setInterval(step, 20000);
+
+  let cdTimeout = 0;
+  let sec = colorfulDuration / 1000;
+  function countdown() {
+    let cd = document.querySelectorAll("#countdown");
+    if (sec > 0) {
+      cd.forEach( el => el.textContent = sec);
+      sec--;
+    } else {
+      cd.forEach( el => el.textContent = "");
+      clearTimeout(cdTimeout);
+    }
+    cdTimeout = setTimeout(countdown, 1000);
+  }
+  countdown();
+  setInterval( () => sec = 7, 10000);
+
+  // let cd = setInterval(countdown, 8000);
+  // setInterval( () => clearInterval(cd, 0), 8000);
 }
 
 window.addEventListener("load", main);
