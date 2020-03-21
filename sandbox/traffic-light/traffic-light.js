@@ -56,7 +56,7 @@ function main() {
   let cdTimeout = 0;
   let sec = colorfulDuration / 1000;
   function countdown() {
-    let cd = document.querySelectorAll("#countdown");
+    let cd = document.querySelectorAll(".countdown");
     if (sec > 0) {
       cd.forEach( el => el.textContent = sec);
       sec--;
@@ -68,9 +68,6 @@ function main() {
   }
   countdown();
   setInterval( () => sec = 7, 10000);
-
-  // let cd = setInterval(countdown, 8000);
-  // setInterval( () => clearInterval(cd, 0), 8000);
 }
 
 window.addEventListener("load", main);
