@@ -15,7 +15,13 @@
  * @return {object}
  */
 function omit(input, props) {
-  /** YOUR CODE HERE */
+  const result = {};
+  for (let [key, value] of Object.entries(input)) {
+    if (!props.includes(key)){
+      result[key] = value;
+    }
+  }
+  return result;
 }
 
 
@@ -36,5 +42,11 @@ function omit(input, props) {
  * @return {object}
  */
 function pick(input, props) {
-  /** YOUR CODE HERE */
+  const result = {};
+  for (let [key, value] of Object.entries(input)) {
+    if (props.includes(key)) {
+      result[key] = value;
+    }
+  }
+  return result;
 }
