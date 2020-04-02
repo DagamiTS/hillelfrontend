@@ -40,7 +40,7 @@ function requestHandler(request, response) {
     if (request.url.startsWith("/homeworks/")) {
       const url = request.url;
       const id = url.slice(11);
-      const data = fs.readFile("../s20e01.json", (err, data) => {
+      fs.readFile("../s20e01.json", (err, data) => {
         if (err) throw err;
         const dataJSON = JSON.parse(data.toString("utf8"));
         dataJSON.forEach( eachObj => {
@@ -54,7 +54,7 @@ function requestHandler(request, response) {
     }
 
     if (request.url = "/homeworks") {
-      const data = fs.readFile("../s20e01.json", (err, data) => {
+      fs.readFile("../s20e01.json", (err, data) => {
         if (err) throw err;
         response.writeHead(200, {"Content-Type": "text/html; charset=utf-8;"});
         const users = JSON.parse(data.toString("utf8"));
