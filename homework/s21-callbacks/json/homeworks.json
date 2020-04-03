@@ -1,0 +1,660 @@
+[
+    {
+        "files": [],
+        "coach_status": "not_all_assessed",
+        "_id": "5e7bba148b51f45fb222ee7d",
+        "lesson": {
+            "_id": "5e6f388610b9db148a742360",
+            "id": "5e6f388610b9db148a742360"
+        },
+        "title": "Запускаем свой сервер на heroku",
+        "description": "<p>Поначалу это может оказаться пугающим, но это рано или поздно каждому придется это делать.</p><p><br></p><p>Самое сложное и отталкивающее, это инструкция на английском языке.</p><p>Это нормально, многих начинающих разработчиков вгоняет в отчаянье необходимость читать инструкции и документацию на английском.</p><p>Как временное решение вы можете использовать google translate chrome plugin, который переводит страницу целиком</p><p><a href=\"https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb\" target=\"_blank\">https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb</a></p><p><br></p><p>Но, подчеркиваю - это временное решение. Чтение текста в оригинале делает лучше не только ваш английский, но и ваш код, ведь код написан на английском.</p><p><br></p><p>1. Необходимо зарегистрировать аккаунт на heroku.com</p><p>Этот сервис я выбрал за довольно быстрый старт.. Несколько косольных комманд и вы справитесь. No credit card required. Также, heroku довольно популярный.</p><p><br></p><p>2. cразу после создания аккаунта и подтверждения email вы увидите приглашение - <strong>Create a new app </strong>- жмите.</p><p><br></p><p>3. Начинайте следовать инструкции, выполните пункты \"<strong>Install the Heroku CLI</strong>\" и \"<strong>Create a new Git repository</strong>\"</p><p><br></p><p>4. Теперь у нас есть git репозиторий, но нет проекта (npm пакета). Создайте его выполнив в папке проекта команду \"<strong>npm init -y</strong>\". Она создаст файл package.json.</p><p><br></p><p>5. создайте файл <strong>index.js</strong>, который наполните содержимым из примера</p><p><a href=\"https://nodejs.org/en/knowledge/HTTP/servers/how-to-create-a-HTTP-server/\" target=\"_blank\">https://nodejs.org/en/knowledge/HTTP/servers/how-to-create-a-HTTP-server/</a></p><p>Придайте немного индивидуальности, поменяйте содержимое ответа</p><p><br></p><p>6. для того, чтобы heroku мог настроить порт, который слушает наш сервер - добавьте в index.js строку</p><p><br></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">const PORT = process.env.PORT || 5000;\n</pre><p>Эта строка сохранит порт из окружения в переменную PORT.</p><p>Используйте переменную <strong>PORT </strong>как параметр для метода <strong>.listen()</strong></p><p>Теперь наш сервер слушает порт, который можно задать при запуске или 5000, если ничего не задали.</p><p><br></p><p>7. Немного вспомним формат JSON. Для запуска нашего сервера необходимо добавить скрипт запуска - \"start\". Добавьте строчку</p><p><br></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">\"start\": \"node index.js\"\n</pre><p>в package.json в секцию \"scripts\", рядом со скриптом \"test\" (следите за запятыми между скриптами)</p><p><br></p><p>8. Проверьте, что наш сервер работает выполнив \"npm start\" и зайдя на <strong>localhost:5000 </strong>из браузера</p><p>Ура! - локально работает.</p><p><br></p><p>9. Заливаем изменения на heroku: Делаем <strong>коммит </strong>удобным вам способом<strong> </strong>и заливаем (<strong>push</strong>). Обратите внимание на push с параметрами из пункта \"<strong>Deploy your changes</strong>\" инструкции на heroku.</p><p><br></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">git push heroku master\n</pre><p><br></p><p>В ответ на задание прикладываем ссылку на ваш сервер. Ее можно найти, например, в последних срочках результата комманды push</p>",
+        "number": 43,
+        "createdAt": "2020-03-25T20:07:48.826Z",
+        "id": "5e7bba148b51f45fb222ee7d"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e775b7a565d5c7dbd96308a",
+        "lesson": {
+            "_id": "5e6f388610b9db148a74235f",
+            "id": "5e6f388610b9db148a74235f"
+        },
+        "title": "Your first HTTP request",
+        "description": "<p>По нажатию на кнопку оправьте HTTP request.</p><p><br></p><ul><li>Создайте GET XMLHttpRequest</li><li>Отправьте запрос используя адрес https://hilleljs.herokuapp.com/hw/42</li><li>Получите ответ и выведите его в элемент #result</li><li>Ответ приходит не мгновенно, а со случайной задержкой до 3 секунд.</li></ul><p><br></p><p>Ссылки на документацию по XMLHttpRequest и disable button - найдете в задании.</p><p><br></p><ul><li>Дополнительно. Чтобы предотвратить отправку нескольких запросов одновременно - отключите кнопку при отправке запроса и включите ее вновь, когда ответ получен.</li><li>Также, в файле server.js можете посмотреть на код, который используется на сервере для отправки ответа на ваши запросы. Его можно запустить и локально используя node.js.</li></ul>",
+        "number": 42,
+        "createdAt": "2020-03-22T12:35:06.015Z",
+        "id": "5e775b7a565d5c7dbd96308a"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e75d33798eceb7dc396c670",
+        "lesson": {
+            "_id": "5e6f388610b9db148a74235f",
+            "id": "5e6f388610b9db148a74235f"
+        },
+        "title": "pick и omit",
+        "description": "<p>s18e01-pick-omit.js</p><p><br></p><p>/**</p><p>&nbsp;* Реализуйте следующие функции:</p><p>&nbsp;* omit - возвращает shallow copy (мелкую копию) объекта,</p><p>&nbsp;* но без указанных свойств, например:</p><p>&nbsp;*</p><p>&nbsp;* const object = { 'a': 1, 'b': '2', 'c': 3 };</p><p>&nbsp;*</p><p>&nbsp;* _.omit(object, ['a', 'c']);</p><p>&nbsp;* // вернет =&gt; { 'b': '2' }</p><p>&nbsp;*</p><p>&nbsp;* Оригинальный объект мы, конечно, оставляем без изменений.</p><p>&nbsp;*</p><p>&nbsp;* @param {object} input - an input object</p><p>&nbsp;* @param {string[]} props - properties to omit</p><p>&nbsp;* @return {object}</p><p>&nbsp;*/</p><p>function omit(input, props) {</p><p>&nbsp;/** YOUR CODE HERE */</p><p>}</p><p><br></p><p><br></p><p>/**</p><p>&nbsp;* Реализуйте функцию pick, которая принимая объект, возвращает новый,</p><p>&nbsp;* который содержит только указанные свойства</p><p>&nbsp;* например:</p><p>&nbsp;*</p><p>&nbsp;* const object = { 'a': 1, 'b': '2', 'c': 3 };</p><p>&nbsp;*</p><p>&nbsp;* _.pick(object, ['a', 'c']);</p><p>&nbsp;* // вернет =&gt; { 'a': 1, 'c': 3 }</p><p>&nbsp;*</p><p>&nbsp;* Оригинальный объект мы не меняем и стараемся всегда так делать.</p><p>&nbsp;*</p><p>&nbsp;* @param {object} input - an input object</p><p>&nbsp;* @param {string[]} props - properties to pick from the input object</p><p>&nbsp;* @return {object}</p><p>&nbsp;*/</p><p>function pick(input, props) {</p><p>&nbsp;/** YOUR CODE HERE */</p><p>}</p><p><br></p>",
+        "number": 41,
+        "createdAt": "2020-03-21T08:41:27.435Z",
+        "id": "5e75d33798eceb7dc396c670"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e72965464db4331a1885460",
+        "lesson": {
+            "_id": "5e6f388610b9db148a74235e",
+            "id": "5e6f388610b9db148a74235e"
+        },
+        "title": "Pit Stop",
+        "description": "<p>Задание на работу одновременно с несколькими событиями.</p><p>Задание Pit-Stop уже в ветке мастер.</p><p><br></p><p>На пит-стопе стоит болид формулы-1</p><p><br></p><p>Дайте команду пилоту выезжать из пит-стопа, когда болид будет полностью заправлен и все колеса будут установлены</p><p><br></p><p>Один механик заправляет машину. Когда бак будет заполнен, механик отправляет события tankFull.</p><p>Еще четыре механика ставят колеса. Когда механик устанавливает колесо - он отправляет событие wheelInstalled</p><p>Поймать эти события можно точно также, как и любой другой DOM event - с помощью addEventListener. Эти события всплывают (bubbles), так что можно ловить события как на самом элементе, так и на любом родительском.</p><p>Добавьте класс <strong>go </strong>на элемент #pit-stop когда все механики будут готовы.</p>",
+        "number": 40,
+        "createdAt": "2020-03-18T21:44:52.276Z",
+        "id": "5e72965464db4331a1885460"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e71e82e45b4a92e42b795c7",
+        "lesson": {
+            "_id": "5e6f388610b9db148a74235e",
+            "id": "5e6f388610b9db148a74235e"
+        },
+        "title": "clone and cloneDeep",
+        "description": "<p>Напишем функцию для копирования объектов.</p><p>Начнем с верхнего уровня и потом используя рекурсию, научимся делать глубокие копии.</p><p><br></p><p>Задание уже в верке мастер в файле <strong>s17e02-clone.js</strong></p><p>Следуйте инструкциям и у вас все получится.</p><p><br></p><p>Время экономьте, будет еще одно задание.</p><p><br></p><p>Проверить правильность выполнения вы можете сами, запустив получившийся код.</p><p>Вспомогательная функция assert покажет вам, где еще нужно поработать.</p>",
+        "number": 39,
+        "createdAt": "2020-03-18T09:21:50.904Z",
+        "id": "5e71e82e45b4a92e42b795c7"
+    },
+    {
+        "files": [
+            {
+                "_id": "5e6e2a267ab309796fe0b727",
+                "mimetype": "image/jpeg",
+                "destination": "/home/hillel/hillel-lms-api/uploads/files",
+                "filename": "Annotation 2020-03-15 151359.jpg-file-1584278054638.jpg",
+                "extension": "jpg",
+                "author": "5da87a6a9dbbf4408216ff1a",
+                "originalname": "Annotation 2020-03-15 151359.jpg",
+                "createdAt": "2020-03-15T13:14:14.640Z",
+                "updatedAt": "2020-03-15T13:14:14.640Z",
+                "file_id": 183514,
+                "__v": 0
+            }
+        ],
+        "coach_status": "assessed",
+        "_id": "5e6e2a2d7ab309796fe0b728",
+        "lesson": {
+            "_id": "5e6bca25a30a30141990b975",
+            "id": "5e6bca25a30a30141990b975"
+        },
+        "title": "Светофоры",
+        "description": "<p>Задание <strong>traffic-light</strong> находится в <strong>sandbox</strong> и уже в ветке<strong> master</strong></p><p><br></p><p>Светофоры находятся в полном беспорядке.</p><p>Ваша здача починить их и заставить работать как надо с помощью</p><p><strong>setInterval </strong>и <strong>setTimeout</strong></p><p><br></p><p>Также вам понадобится<strong> document.getElementById </strong>или <strong>document.querySelector </strong>для нахождения элементов и<strong> classList.add / remove / toggle </strong>для изменения состояния.</p><p><br></p><p>UPD: классы <strong>tall, horizontal, vertical, left-handed </strong>используются для внешнего вида, и особо к ним не цепляйтесь.</p><p><br></p><p>Для включения и выключения лампочек достаточно добавить или убрать</p><p>класс red, yellow или green у нужного светофора.</p><p>С помощью текста внутри елементов с классом \"bulb\" можно отображать</p><p>оставшееся количество секунд.</p><p><br></p><p>Сейчас классы и значения установлены только для демонстрации возможностей.</p><p>Все значения можно очистить перед реализацией.</p><p><br></p><p>Реализуйте переключение светофора настолько детализировано, насколько у вас получится.</p><p><br></p><p>1. Если необходимо, добавьте id или классы светофорам (можно обойтись и без)</p><p>2. Для разминки, сделайте \"ночной\" режим - мигающий желтый.</p><p>3. Начните с установки только красного и зеленого</p><p>4. Добавьте желтый между зеленым и красным</p><p>5. Добавьте жетлый вместе с красным перед зеленым</p><p>6. Обратный отсчет - конечно, задание со звездочкой.</p>",
+        "number": 38,
+        "createdAt": "2020-03-15T13:14:21.186Z",
+        "id": "5e6e2a2d7ab309796fe0b728"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e6cbd977ab309796fe09e8f",
+        "lesson": {
+            "_id": "5e6bca25a30a30141990b975",
+            "id": "5e6bca25a30a30141990b975"
+        },
+        "title": "Переделка фермы",
+        "description": "<p>Это задание состоит из нескольких частей.</p><p><br></p><p>Я хочу чтобы ни одно ваше животное не пропало - они замечательные. Будет отлично, если мы запустим всех сразу в один вольер!</p><p>Однако, если мы <strong>вмержим</strong> какое-либо животное<strong> </strong>(скопируем ваши изменения в ветку), то больше ни одно не получится из-за конфликтов. Вспомните, что репозиторий - это как картина импрессиониста и каждый из вас нарисовал животное на одном и том же месте.</p><p><br></p><p>Чтобы это побороть, вы должны перенести ваши измениня о отдельный файл. </p><p>Все равно останутся конфликты в месте, где мы добавляем животных, но они уже вменяемые и мы их поборем на уроке.</p><p><br></p><p>Как же перести животное в отдельный файл - инструкция ниже.</p><p><br></p><p><a href=\"https://github.com/zamuka/hillelfrontend/pull/55\" target=\"_blank\">https://github.com/zamuka/hillelfrontend/pull/55</a></p><p><br></p><ol><li>Посмотрите мой пулл реквест, в котором я создал папку animals и перес туда Animal и Cow с Chicken.</li><li>Эти изменения пока не в ветке master и кто-то из <strong>вас </strong>должен перенести их туда. Первые несколько человек должны просмотреть мои предложения и <strong>заапрувить </strong>(поставить свою подпись, approve), чтобы кто-то смог применить эти изменения к ветке мастер - (таки <strong>вмержить</strong>)</li><li>После того, как статус реквеста сменится на <strong>merged </strong>- можно подтягивать новый <strong>master</strong>, создавать новую ветку и переписать ваше животное используя классы. <strong>Создаем пулл реквест</strong>, как раньше.</li><li>Достаточно скопировать cow.js и написать животное, но также вы можете увидеть <strong>много нового и интересного</strong>:</li></ol><p><br></p><ul><li>класс не просто объявляется, а сразу экспортируется добавлением <strong>export</strong></li><li>специальный <strong>index </strong>файл собирает все из файлов папки с помощью <strong>export * from 'chicken.js';</strong>. Эта запись пробрасывает все экспорты из файла chicken.js, и теперь Chicken можно импортировать уже из index. Файл называется index.js не просто так - при импорте в typescript можно опустить index.ts и импорт будет еще короче (пока так нельзя)</li></ul><pre class=\"ql-syntax\" spellcheck=\"false\">import { Cow, Chicken } from './animals';\n</pre><ul><li>во все конструкторы <strong>третим </strong>параметром я добавил <strong>canvas </strong>- это знакомство с <strong>dependency injection</strong>. Наш объект canvas необходим нам в каждом животном. Импортировать и создавать его в каждом файле - неоптимально. Мы передаем его как параметр при инициализации, сохраняем в this и используем. Такой подход дает массу примуществ и часто используется в разработке.</li><li>прочитайте описание урока. В нем можно найти способ переиспользовать код Animal.draw внутри Cow.draw.</li><li><strong>EXTRA</strong>. (у кого и так перегруз - пропускайте) новый файл canvas-lib.d.ts. Это файл с расширением .ts - тип TypeScript. Он содержит интерфейс (описание внутренностей моей библиотечки). Такие редакторы, как vs-code, webStorm понимают эти файлы. Они никак не влияют на работу программы, но позволяют мне с помощью JSDoc задать тип переменной для подсказок. Теперь позьоваться canvas внутри Animal намного проще.</li></ul>",
+        "number": 37,
+        "createdAt": "2020-03-14T11:18:48.007Z",
+        "id": "5e6cbd977ab309796fe09e8f"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e68f2d1631e761942146da4",
+        "lesson": {
+            "_id": "5e67d5a6660b6139608df60e",
+            "id": "5e67d5a6660b6139608df60e"
+        },
+        "title": "Шахматы",
+        "description": "<p>Испугались? </p><p>Пока все просто.</p><p>Надо сделать шахматную доску из элементов div.</p><p>Надеюсь, вы знаете, как она выглядит.</p><p><br></p><p>Файлы уже в master.</p><p>Задание Checkerboard доступно в песочнице.</p><p><br></p><p>npm run sandbox </p><p><br></p>",
+        "number": 36,
+        "createdAt": "2020-03-11T14:16:49.726Z",
+        "id": "5e68f2d1631e761942146da4"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e6898a73282cd634a32d84f",
+        "lesson": {
+            "_id": "5e67d5a6660b6139608df60e",
+            "id": "5e67d5a6660b6139608df60e"
+        },
+        "title": "Третий тип",
+        "description": "<p>Добавьте третий тип животного на ферму (На новую ферму, где животные ходят =) ).</p><p>sandbox\\farm\\farm.js</p><p><br></p><p>У вас полная свобода в выборе, что это будет.</p><p>Наследуйтесь от любого существующего типа.</p><p>Переопределите как минимум один метод.</p><p>Старайтесь, но не тратьте очень много мремени, будет еще задания.</p>",
+        "number": 35,
+        "createdAt": "2020-03-11T07:52:07.713Z",
+        "id": "5e6898a73282cd634a32d84f"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e6527795e280f539a38f43d",
+        "lesson": {
+            "_id": "5e628fa5fe357871ef356994",
+            "id": "5e628fa5fe357871ef356994"
+        },
+        "title": "Form Input Values 1",
+        "description": "<p>Для следующего задания я добавил новую команду</p><p><br></p><p>npm run sandbox</p><p><br></p><p>которая откроет страницу не со змеей, а недавно добавленную папку - sandbox</p><p>В этой папке мы будем делать задания, в которых надо работать с HTML</p><p><br></p><p>Элементы в списке - кликабельные. Заходите в задание и читайте инструкцию.</p><p><br></p><p><br></p><p><br></p>",
+        "number": 34,
+        "createdAt": "2020-03-08T17:12:25.869Z",
+        "id": "5e6527795e280f539a38f43d"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e6526c3af81b34b0055ee22",
+        "lesson": {
+            "_id": "5e628fa5fe357871ef356994",
+            "id": "5e628fa5fe357871ef356994"
+        },
+        "title": "Farm Proto Problem",
+        "description": "<p>Повторим создание функций-конструкторов.</p><p>Попробуем работу с прототипом.</p><p><br></p><p>Все необходимое в файле</p><p>s14e02-farm-proto-problem.js</p><p><br></p><p><br></p>",
+        "number": 33,
+        "createdAt": "2020-03-08T17:09:23.716Z",
+        "id": "5e6526c3af81b34b0055ee22"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e6526615e280f539a38f423",
+        "lesson": {
+            "_id": "5e628fa5fe357871ef356994",
+            "id": "5e628fa5fe357871ef356994"
+        },
+        "title": "Счет на секунды",
+        "description": "<p>Вспоминаем методы строк.</p><p><br></p><p>Необходимо посчитать секунды, прошедшие с начала суток.</p><p>Все необходимое в файле </p><p><br></p><p>s14e01-string-zulu-seconds.js</p>",
+        "number": 32,
+        "createdAt": "2020-03-08T17:07:45.390Z",
+        "id": "5e6526615e280f539a38f423"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e60b862b5bdd83af85eafa0",
+        "lesson": {
+            "_id": "5e5e9b2445c92705739f550b",
+            "id": "5e5e9b2445c92705739f550b"
+        },
+        "title": "Используем Codewars для нахождения своих слабых мест и тренировки рабочих навыков.",
+        "description": "<h4><a href=\"https://www.codewars.com/dashboard\" target=\"_blank\">https://www.codewars.com/dashboard</a></h4><h4><br></h4><h4>Your Next Challenge...</h4><p>выбираем JavaScript</p><p>и Fundamentals или RankUp</p><p>Жмем <strong>Train</strong></p><p><br></p><p>Пробуем решить задачу - смотрим, что мешает сделать ее. </p><p>Чего вы еще не знаете?</p><p>Сохраните сложную для вас задачу (и ссылку на нее)  в ответ на это задание. </p><p>Попробуйте сформулировать более точно, какой шаг вы не знаете как сделать. </p><p>Запишите этот шаг.</p><p><br></p><p>Ваш настоящий рабочий день будет очень похож на этот процесс. Ваши задачи не всегда ясно как решать, но найти проблемный шаг и прийти с ним к тому, кто разбирается - <strong>ваша </strong>задача. Надо уметь это делать как можно лучше.</p><p><br></p><p>NOTE: Хорошо сформулированный вопрос уже содержит в себе пол ответа и можно гуглить.</p><p>NOTE: Вариант \"Мне мешает лень\" уже занят!</p><p><br></p>",
+        "number": 31,
+        "createdAt": "2020-03-05T08:29:22.048Z",
+        "id": "5e60b862b5bdd83af85eafa0"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e60b62f0f74366dd1ce149e",
+        "lesson": {
+            "_id": "5e5e9b2445c92705739f550b",
+            "id": "5e5e9b2445c92705739f550b"
+        },
+        "title": "Учебные видео",
+        "description": "<p>Помните видео, которые Михаил нам постил в ленте?</p><p><br></p><p>Про гит, у кого есть еще сомнения и вопросы - посмотрите видео 4 про ветки.</p><p><a href=\"https://www.youtube.com/watch?v=CFRlkz9Alog&amp;list=PLuEo4W0EBxtUx_QXOXdklGHpZMK2U8nYc&amp;index=4\" target=\"_blank\">https://www.youtube.com/watch?v=CFRlkz9Alog&amp;list=PLuEo4W0EBxtUx_QXOXdklGHpZMK2U8nYc&amp;index=4</a></p><p><br></p><p>Также, вся серия про администрирование linux - неплохая.</p><p>Дам 15 видео по 10-5 минут. Неспеща поглядывайте вместо других youtube роликов</p><p><a href=\"https://www.youtube.com/watch?v=oIyCgltYA68&amp;list=PLuEo4W0EBxtXfjuMmfczZ1hRPpJm2mMLG&amp;index=1\" target=\"_blank\">https://www.youtube.com/watch?v=oIyCgltYA68&amp;list=PLuEo4W0EBxtXfjuMmfczZ1hRPpJm2mMLG&amp;index=1</a></p><p><br></p><p>Отмечайте задание, как выполненное, когда начнете смотреть</p>",
+        "number": 30,
+        "createdAt": "2020-03-05T08:19:59.443Z",
+        "id": "5e60b62f0f74366dd1ce149e"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e601ec80f74366dd1ce0fd7",
+        "lesson": {
+            "_id": "5e5e9b2445c92705739f550b",
+            "id": "5e5e9b2445c92705739f550b"
+        },
+        "title": "Вызываем every для строки",
+        "description": "<p>Файлы с заданием уже в ветке master</p><p><br></p><p><strong>s13e01-call.js</strong></p><p>В&nbsp;массиве&nbsp;есть&nbsp;знакомый&nbsp;нам&nbsp;метод&nbsp;<strong>every</strong>,</p><p>жаль,&nbsp;что&nbsp;такого&nbsp;же&nbsp;нет&nbsp;в&nbsp;строке.</p><p>Постойте,&nbsp;используя&nbsp;метод&nbsp;функции&nbsp;.call</p><p>мы&nbsp;можем&nbsp;вызвать&nbsp;метод&nbsp;массива&nbsp;НА&nbsp;строке.</p><p><br></p><p>Необходимо узнать, все ли буквы в строке гласные.</p><p><br></p><p>NOTE:</p><p>Вам нужна будет функция isVowel, которая вернет true, если входящая <strong>буква</strong> - гласная, и false в другом случае. Теперь, когда вы знаете про метод .includes - функция выйдет проще.</p><p><br></p><p>Возможно, вы реализовали ее в задании s04e02-no-vowels-please.js. Если нет - все равно загляните в то задание.</p><p><br></p><p><strong>s13e02-bind.js</strong></p><p>Почините электрочайник, используя методы сохранеия</p><p>this, рассмотренные на занятии.</p><p><br></p><p>NOTE: работайте на будуще, привяжите все методы. Пробуйте разные способы.</p><p><br></p><p><strong>s13e03-rx12-boxart-projection.js</strong></p><p>Вспомним работу с массивами</p><p>Из массива со списком фильмов необходимо выбрать определенный набор данных.</p><p>Полный текст задание в файле</p>",
+        "number": 29,
+        "createdAt": "2020-03-04T21:34:00.353Z",
+        "id": "5e601ec80f74366dd1ce0fd7"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e5a44d003f3a75b1da308ff",
+        "lesson": {
+            "_id": "5e5955252d1370037d3f9113",
+            "id": "5e5955252d1370037d3f9113"
+        },
+        "title": "Tренируемся использовать декомпозицию",
+        "description": "<p>Как и прошлое задание, из-за объемов текста лучше делать его в через репозиторий,</p><p>Если хотите постить сюда, то постите только ваши изменения</p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">\n// Tренируемся использовать декомпозицию\n\nconst vegetable = {\n/**\n&nbsp;* 1.\n&nbsp;* TODO:\n&nbsp;* добавьте свойства в объект vegetable так, чтобы в консоль вывелось\n&nbsp;* onions are usually white\n&nbsp;*/\n};\n\nconst { name, color } = vegetable;\n\nconsole.log(`${name}s are usually ${color}`);\n\n\n/**\n&nbsp;* 2.\n&nbsp;* Заметьте, что другие свойства никак не влияют на результат.\n&nbsp;* Мы используем только указанные в скобках при декомпозиции.\n&nbsp;*/\n\n/** TODO:\n&nbsp;* Добавьте свойства в объект vegetable так, чтобы в консоль вывелось\n&nbsp;* onions are usually round */\n\nconst { shape } = vegetable;\n\nconsole.log(`${name}s are usually ${shape}`);\n\n/**\n&nbsp;* Декомпозиция работает не только на объектах, но и на массивах.\n&nbsp;* Только скобки нужно использовать другие\n&nbsp;*/\n\nconst vegetables = [\n&nbsp;{ name: 'cucuber', color: 'green' },\n&nbsp;vegetable, // это наш лук\n&nbsp;{ name: 'pumpkin', color: 'orange' },\n&nbsp;{ name: 'tomato', color: 'red', shape: 'round' }\n];\n\n/**\n&nbsp;* Объявляем новые константы cucumber и onion и записываем в\n&nbsp;* них 0й и 1й элементы массива vegetables\n&nbsp;*/\nconst [cucumber, onion] = vegetables;\n\n// выведется cucumber and onion\nconsole.log(`${cucumber.name} and ${onion.name}`);\n\n/**\n&nbsp;* Как вы заметили, можно брать не все элементы массива.\n&nbsp;* Можно даже пропускать некоторые элементы.\n&nbsp;* Например, возьмем третий элемент\n&nbsp;*/\n\nconst [, , pumpkin] = vegetables;\n// выведется cucumber and onion\nconsole.log(`${pumpkin.name}s are usually ${pumpkin.color}`);\n\n/**\n&nbsp;* 3.\n&nbsp;* TODO:\n&nbsp;* Добавьте запятых в выражение ниже, чтобы отобразилось\n&nbsp;* tomatoes are usually red and round\n&nbsp;*/\nconst [tomato] = vegetables;\n\nconsole.log(`${tomato.name}es are usually ${tomato.color} and ${tomato.shape}`);\n\n/**\n&nbsp;* Используя еще более замысловатые структуры можно легко разбивать\n&nbsp;* массивы на необходимые части.\n&nbsp;*\n&nbsp;* Пример ниже сохранит огурец в firstVegetable, а все остальные\n&nbsp;* овощи (3шт) в новый массив otherVegetables\n&nbsp;* rest элемент (...) должен идти последним.\n&nbsp;*/\n\nconst [firstVegetable, ...otherVegetables] = vegetables;\n// a cucuber and 3 other vegetables\nconsole.log(`a ${firstVegetable.name} and ${otherVegetables.length} other vegetables`);\n</pre><p><br></p>",
+        "number": 28,
+        "createdAt": "2020-02-29T11:02:40.292Z",
+        "id": "5e5a44d003f3a75b1da308ff"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e5a43be03f3a75b1da307f1",
+        "lesson": {
+            "_id": "5e5955252d1370037d3f9113",
+            "id": "5e5955252d1370037d3f9113"
+        },
+        "title": "Конструируем объекты",
+        "description": "<p>Объемы текста растут. Я бы предпочел, чтобы задание было выполнено в ваших ветках для домашних работ.</p><p>Создайте новую ветку HW12_02_ваше_имя от master</p><p>сделайте измения</p><p>commit, push. </p><p><strong>ПР делать не надо</strong>, достаточно ссылки на ветку на гитхаб или названия ветки</p><p>Кому сложно, конечно кидайте код сюда.</p><p><br></p><p>s12e02-hw-objects.js</p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">// 1. Напишите функцию-конструктор (с большой буквы название)\n// которая делает следующее:\n// генерирует случайное число от -100 до 100 и записывает его в\n// свойство создаваемого объекта используя this (название\n// свойства на ваш выбор)\n\n// Добавьте в объект метод showNumber, который выводит это\n// число в консоль и метод isNegative, который\n// возвращает true если число меньше ноля.\n\nfunction /**\n\n\n&lt;ВАШ_КОД_ТУТ&gt;\n\n\n*/\n\n\n// 2. Создайте объект с помощью оператора new (в новую константу\n// присвойте результат вызова вашей функции счерез оператор new)\n\n\n\n\n// 3. Создайте константу с пустым массивом. Используя цикл for\n// создайте 10 таких же объектов и с помощью push добавьте в массив\n\n\n\n\n// 4. Теперь, когда наши 10 объектов находятся в массиве мы можем\n// с ними работать, также как работали с объектами ранее.\n// Используйте метод массива filter и используя isNegative\n// из ваших объектов отберите отрицательные числа.\n// Используя forEach и метод объекта showNumber отобразите числа в консоль.\n\n\n</pre><p><br></p>",
+        "number": 27,
+        "createdAt": "2020-02-29T10:58:06.359Z",
+        "id": "5e5a43be03f3a75b1da307f1"
+    },
+    {
+        "files": [
+            {
+                "_id": "5e5786ca81e7ef146e9a28d6",
+                "mimetype": "image/png",
+                "destination": "/home/hillel/hillel-lms-api/uploads/files",
+                "filename": "review.png-file-1582794442160.png",
+                "extension": "png",
+                "author": "5da87a6a9dbbf4408216ff1a",
+                "originalname": "review.png",
+                "createdAt": "2020-02-27T09:07:22.162Z",
+                "updatedAt": "2020-02-27T09:07:22.162Z",
+                "file_id": 175537,
+                "__v": 0
+            }
+        ],
+        "coach_status": "assessed",
+        "_id": "5e5651ea149cf76cff9bae93",
+        "lesson": {
+            "_id": "5e5560a42082f548bfb1d025",
+            "id": "5e5560a42082f548bfb1d025"
+        },
+        "title": "Тренируем код ревью",
+        "description": "<p>Код ревью очень важная часть работы программистом.</p><p>Необходимо не только писать код, но и смотреть на чужой, а также, адекватно воспринимать критику и предложения :)</p><p><br></p><p>Начинайте тренировать этот навык и сможете добавить его в свое CV.</p><p><br></p><p>Вот ссылка ведущая прямо на открытые пулл реквесты</p><p><br></p><p><a href=\"https://github.com/zamuka/hillelfrontend/pulls\" target=\"_blank\">https://github.com/zamuka/hillelfrontend/pulls</a></p><p><br></p><p>К заданию прикреплена картинка с действиями, которые необходимо сделать.</p><p><br></p><p>Даже если вы еще не сделали задание 23 с изменениями в змее вы все равно уже можете оценить решения ваших коллег.</p><p><br></p><p><br></p><p><br></p><ul><li>Открывайте случайный пулл реквест с наименьшим количеством коментариев,</li><li>открывайте файлы - последняя вкладка \"Files changed\"</li><li>читайте, ищите ошибки или варианты, как сделать лучше. Оставляйте коментарии, в которых требуйте разъяснений или предлагайте лучшие решения.</li><li>Просто вдохновляйтесь чужим кодом.</li><li>делайте свой пулл реквест, учитывая увиденное в чужих</li><li>отвечайте на все коментарии в своем пулл реквесте и вносите изменения, которые считаете нужными.</li><li><strong>добавляйте свой ПР</strong>, чтобы всем хватило реквестов поучится делать code review.</li></ul><p><br></p><p>Можете просто отметить задание как выпооненное.</p><p>Это задание скорее бонусное, я буду следить за активностью на гитхабе и ставить оценку.</p>",
+        "number": 26,
+        "createdAt": "2020-02-26T11:09:30.505Z",
+        "id": "5e5651ea149cf76cff9bae93"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e564bd208f28e6d87b649e9",
+        "lesson": {
+            "_id": "5e5560a42082f548bfb1d025",
+            "id": "5e5560a42082f548bfb1d025"
+        },
+        "title": "Методы строк",
+        "description": "<p>Лекция была скучной, но задание будет интересным.</p><p>Файлы уже залиты в мастер.</p><p><br></p><p>продублирую задание тут и здесь же можно постить ответы</p><p><br></p><p>s11e01-strings.js</p><pre class=\"ql-syntax\" spellcheck=\"false\">//&nbsp;Find&nbsp;the&nbsp;position&nbsp;of&nbsp;the&nbsp;character&nbsp;h&nbsp;in&nbsp;the&nbsp;string&nbsp;txt.\nconst&nbsp;txt1&nbsp;=&nbsp;\"abcdefghijklm\";\nconst&nbsp;pos&nbsp;=&nbsp;txt1./**&nbsp;YOUR&nbsp;CODE&nbsp;HERE&nbsp;*/;\nconsole.log(pos);\n\n\n//&nbsp;Use&nbsp;the&nbsp;slice&nbsp;method&nbsp;to&nbsp;return&nbsp;the&nbsp;word&nbsp;\"bananas\".\nconst&nbsp;txt2&nbsp;=&nbsp;\"I&nbsp;can&nbsp;eat&nbsp;bananas&nbsp;all&nbsp;day\";\nconst&nbsp;bananas&nbsp;=&nbsp;txt2.slice(/**&nbsp;YOUR&nbsp;CODE&nbsp;HERE&nbsp;*/,&nbsp;/**&nbsp;YOUR&nbsp;CODE&nbsp;HERE&nbsp;*/);\nconsole.log(bananas);\n\n\n//&nbsp;Use&nbsp;the&nbsp;correct&nbsp;String&nbsp;method&nbsp;to&nbsp;replace&nbsp;the&nbsp;word&nbsp;\"Hello\"&nbsp;with&nbsp;the&nbsp;word&nbsp;\"Welcome\".\nlet&nbsp;txt3&nbsp;=&nbsp;\"Hello&nbsp;World\";\ntxt3&nbsp;=&nbsp;txt3./**&nbsp;YOUR&nbsp;CODE&nbsp;HERE&nbsp;*/(\"Hello\",&nbsp;\"Welcome\");\nconsole.log(txt3);\n\n\n//&nbsp;Convert&nbsp;the&nbsp;value&nbsp;of&nbsp;txt&nbsp;to&nbsp;upper&nbsp;case.\nlet&nbsp;txt4&nbsp;=&nbsp;\"Hello&nbsp;World\";\ntxt4&nbsp;=&nbsp;/**&nbsp;YOUR&nbsp;CODE&nbsp;HERE&nbsp;*/;\nconsole.log(txt4);\n\n\n//&nbsp;Split&nbsp;the&nbsp;text&nbsp;into&nbsp;words\nconst&nbsp;txt5&nbsp;=&nbsp;\"Hello&nbsp;World\";\nconst&nbsp;words&nbsp;=&nbsp;txt5./**&nbsp;YOUR&nbsp;CODE&nbsp;HERE&nbsp;*/;\nconsole.log(words);\n\n\n\n</pre><p><br></p><p>s11e02-needful-things.js</p><pre class=\"ql-syntax\" spellcheck=\"false\">//&nbsp;Избавляемся&nbsp;от&nbsp;ненужных&nbsp;вещей.\n//&nbsp;В&nbsp;строке&nbsp;записан&nbsp;список&nbsp;вещей,&nbsp;раздленных&nbsp;запятыми.&nbsp;Некоторые&nbsp;вещи&nbsp;-&nbsp;ненужные.&nbsp;Их&nbsp;легко&nbsp;опознать\n//&nbsp;по&nbsp;названию&nbsp;-&nbsp;они&nbsp;начинаются&nbsp;с&nbsp;\"Ненужный\",&nbsp;\"Ненужное\",&nbsp;\"Ненужная\",&nbsp;\"Ненужные\".\n//&nbsp;Избавьтесь&nbsp;от&nbsp;ненужных&nbsp;вещей&nbsp;с&nbsp;помощью&nbsp;методов&nbsp;строки:&nbsp;split&nbsp;и&nbsp;startsWith&nbsp;и&nbsp;метода\n//&nbsp;массива:&nbsp;filter.&nbsp;Соберите&nbsp;строку&nbsp;назад&nbsp;с&nbsp;помощью&nbsp;метода&nbsp;массива&nbsp;join.\n\n\n//&nbsp;Чтобы&nbsp;избавиться&nbsp;от&nbsp;необходимости&nbsp;проверять&nbsp;варианты&nbsp;с&nbsp;заглавной&nbsp;и&nbsp;строчной&nbsp;буквой&nbsp;'Н'\n//&nbsp;перед&nbsp;сравнением&nbsp;просто&nbsp;приводите&nbsp;проверяемую&nbsp;строку&nbsp;к&nbsp;удобному&nbsp;для&nbsp;вас&nbsp;варианту,&nbsp;например&nbsp;toLowerCase\n\n\n//&nbsp;Должно&nbsp;остаться&nbsp;8&nbsp;нужных&nbsp;вещей.\n//&nbsp;В&nbsp;результате&nbsp;должна&nbsp;получиться&nbsp;строка&nbsp;со&nbsp;словами,&nbsp;разделенными&nbsp;запятыми.&nbsp;(так&nbsp;же,&nbsp;как&nbsp;в&nbsp;источнике)\n\n\nconst&nbsp;allThings&nbsp;=&nbsp;'кусок&nbsp;дерева,&nbsp;Ненужная&nbsp;скромность,&nbsp;Очки&nbsp;Элвиса,&nbsp;ненужные&nbsp;сомнения,&nbsp;Цветное&nbsp;стекло,&nbsp;Амулет&nbsp;от&nbsp;артрита,&nbsp;\"Лошадиные&nbsp;скачки\",&nbsp;Книга,&nbsp;Ненужное&nbsp;мороженое,&nbsp;Ваза,&nbsp;ненужный&nbsp;желудь,&nbsp;бейсбольная&nbsp;карточка';\n\n\nconst&nbsp;needfulThings&nbsp;=&nbsp;allThings.&nbsp;/**&nbsp;YOUR\n&nbsp;&nbsp;CODE\n&nbsp;&nbsp;HERE\n*/\n\n\n\nconsole.log(needfulThings);\n</pre>",
+        "number": 25,
+        "createdAt": "2020-02-26T10:43:30.199Z",
+        "id": "5e564bd208f28e6d87b649e9"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e511b8e5821191964254b59",
+        "lesson": {
+            "_id": "5e501aa5d5218d70dcc2e0a1",
+            "id": "5e501aa5d5218d70dcc2e0a1"
+        },
+        "title": "Отрабатываем работу c Math",
+        "description": "<p>Ответы можно постить прямо здесь.</p><p><br></p><ol><li>Напишите функцию <strong>getRandomInt </strong>которая возвращает случайное целое число в заданном диапазоне - <strong>getRandomInt</strong>(3, 5) должна вернуть3 или 4 или 5.</li><li>Напишите функцию <strong>sample</strong>, которая примает массив элементов и возвращает случайный элемент (образец). <strong>sample</strong>(['a', 'b', 'c']) должна вернуть 'a' либо 'b' либо 'c'. При вызове с пустым массивом, или не массивом - возвращаем <strong>null</strong></li><li>Напишите функцию <strong>calculateCircleAreaFromRadius - </strong>которая посчитает и вернет площать круга из радиуса.</li><li>Напишите функцию <strong>hypo</strong>, которая считает и возвращает значение гипотенузы прямоугольного треугольника из двух катетов. Например hypo(3, 4) - должна вернуть 5.</li></ol>",
+        "number": 24,
+        "createdAt": "2020-02-22T12:16:14.531Z",
+        "id": "5e511b8e5821191964254b59"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e51192225caed1874557267",
+        "lesson": {
+            "_id": "5e501aa5d5218d70dcc2e0a1",
+            "id": "5e501aa5d5218d70dcc2e0a1"
+        },
+        "title": "Закончите незавершенную работу над игрой",
+        "description": "<p>Изменения, которые мы сделали в классе уже находятся в ветке мастер.</p><p>После окончания работы необходимо еще раз сделать pull request для закрепления, так что после подтягивания последних изменений - создайте новую ветку и работайте в ней.</p><p><br></p><p>1. handleGameFieldClick</p><p>добавьте код, влияющий на направление при движении змеи по горизонтали.</p><p><br></p><p>2. addFood</p><p>допишите функцию, чтобы она \"создавала\" food в случайной пустой ячейке</p><p><br></p><p>3. startGame</p><p>добавьте создание первой food в startGame</p><p><br></p><p>4. nextStep</p><p>Усовершенствуйте проверку наличия препятсвия по новым координатам головы так, чтобы \"еда\" не вызывала конец игры, но удлинняла змею.</p><p><br></p><p><br></p><p>Получите 2 балла за каждое задание или 2.5, если получится с первой попытки</p><p><br></p>",
+        "number": 23,
+        "createdAt": "2020-02-22T12:05:54.288Z",
+        "id": "5e51192225caed1874557267"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e4d12588dd0905e0ff13dd3",
+        "lesson": {
+            "_id": "5e4c262630fcba0f743d0c09",
+            "id": "5e4c262630fcba0f743d0c09"
+        },
+        "title": "Методы массивов findIndex, includes, indexOf, lastIndexOf",
+        "description": "<p>Продолжаем изучать методы массивов.</p><p>Это предпоследний набор методов и все они схожи с методом find.</p><p><br></p><p>необходимо написать 4 функции:</p><p><br></p><ul><li><strong>findIndex</strong> - работает аналогично find, но возвращает не элемент, а его индекс. Индексы начинаются, как обычно, с нуля. Если элемент не найден - возвращает -1.</li></ul><p><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex\" target=\"_blank\">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex</a></p><p><br></p><ul><li><strong>includes </strong>- принимает значение элемента и возвращает true, если такой эоемент есть в массиве. Например </li></ul><p>includes(['a', 'o', 'e', 'u', 'i'], 'o') - должен вернуть <strong>true</strong></p><p>а</p><p>includes(['a', 'o', 'e', 'u', 'i'], 'm') - <strong>false</strong></p><p><br></p><p>аналогично работает встроенный метод: ['a', 'o', 'e', 'u', 'i'].includes('o')</p><p><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes\" target=\"_blank\">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes</a></p><p><br></p><p><br></p><ul><li><strong>indexOf</strong> - похож на findIndex, но принимает параметром не функцию, а элемент.</li></ul><p>indexOf(['a', 'o', 'e', 'u', 'i'], 'e') - должен вернуть 2</p><p>indexOf(['a', 'o', 'e', 'u', 'i'], 'm') - вернет -1, так как элемент не найден.</p><p><br></p><p>Встроенный метод также принимает опциональное стартовое значение, с которого надо начинать поиск. Это полезно, когда в массиве несколько элементов с искомым значением.</p><p>Реализовывать такой функционал не нужно, но помнить про такую возможность стоит.</p><p>['a', 'o', 'i', 'a', 'o'].indexOf('a') - вернет 0</p><p>['a', 'o', 'i', 'a', 'o'].indexOf('a', 2) - вернет 3</p><p><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf\" target=\"_blank\">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf</a></p><p><br></p><p><br></p><ul><li><strong>lastIndexOf </strong>-работает как indexOf, но ищет элементы начиная с конца</li></ul><p>['a', 'o', 'i', 'a', 'o'].lastIndexOf('a') - вернет 3</p><p><a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf\" target=\"_blank\">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf</a></p>",
+        "number": 22,
+        "createdAt": "2020-02-19T10:47:52.681Z",
+        "id": "5e4d12588dd0905e0ff13dd3"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e4d0dd38dd0905e0ff13b37",
+        "lesson": {
+            "_id": "5e4c262630fcba0f743d0c09",
+            "id": "5e4c262630fcba0f743d0c09"
+        },
+        "title": "Дописать код, вычисляющий новые координаты головы питона",
+        "description": "<p>На занятии мы добавили управление с помощью стрелок, однако меняется только переменная direction.</p><p><br></p><ol><li>Необходимо модифицировать код, вычисляющий новые координаты головы чтобы он учитывал все направления, а не только \"right\".</li><li>По примеру предыдущего задания, создайте новую ветку от master и создайте pull reuest</li></ol><ul><li>git checkout master</li><li>git pull</li><li>git branch hw_&lt;name&gt;_controls</li><li>git checkout hw_&lt;name&gt;_controls</li><li>пишем код</li><li>делаем commit</li><li>заливаем изменения</li><li>создаем pull request</li><li>прикладываем ссылку</li></ul><p><br></p><p><br></p>",
+        "number": 21,
+        "createdAt": "2020-02-19T10:28:35.208Z",
+        "id": "5e4d0dd38dd0905e0ff13b37"
+    },
+    {
+        "files": [
+            {
+                "_id": "5e47fafa31187063282732c2",
+                "mimetype": "image/png",
+                "destination": "/home/hillel/hillel-lms-api/uploads/files",
+                "filename": "walls.png-file-1581775610130.png",
+                "extension": "png",
+                "author": "5da87a6a9dbbf4408216ff1a",
+                "originalname": "walls.png",
+                "createdAt": "2020-02-15T14:06:50.132Z",
+                "updatedAt": "2020-02-15T14:06:50.132Z",
+                "file_id": 168864,
+                "__v": 0
+            }
+        ],
+        "coach_status": "assessed",
+        "_id": "5e47fa387dea9478b2b8b736",
+        "lesson": {
+            "_id": "5e46e02520b8b24ed498b66d",
+            "id": "5e46e02520b8b24ed498b66d"
+        },
+        "title": "Добавьте рамки на игровое поле",
+        "description": "<p>1. Добавьте класс \"wall\" в граничные ячейки с помощью</p><ul><li>циклов for</li><li>document.getElementById</li><li>cell.classList.add('wall')</li></ul><p><br></p><p>2. с помощью стилей в styles.css сделайте эти ячейки коричневого цвета</p><p> </p><p>3. Создайте pull request на гитхаб с вашими изменениями.</p><p>Видео, как создать пулл реквест добавлено к занятию.</p><p><br></p><p>3.1. Для того, чтобы выставить ваши изменения на рассмотрение (сделать pull request) для начала необходимо создать новую ветку (branch - вариант кода проекта, отличную от основного).</p><p><br></p><p>git branch hw_&lt;ваше имя и фамилия сокращенно&gt;.</p><p>git checkout &lt;имя созданной ветки&gt;</p><p><br></p><p>3.2. Делаем изменения в коде. Не нужно создавать дополнительные папки для своих изменений. Меняйте оригинальные файлы так, как будто это ваш проект, ведь это всего лишь _ваша_ версия и оригинальные файлы в безопасности.</p><p><br></p><p>3.3. Сделав и сохранив все желаемые изменения в вашей ветке, необходимо добавить вашу ветку в основной репозиторий на гитхаб (\"запушить\", от комманды \"push\").</p><p><br></p><p>git push</p><p><br></p><p>3.4. После чего можно создать \"pull request\" - запрос на подтягивание вашего кода в основную ветку. (делается на github через интерфейс github)</p><p>Это запрос может быть рассмотрен, и либо одобрен (approve) либо отвергнут (reject) другими участниками проекта. Кто угодно может переключиться в вашу ветку на своем компьютере и проверить, все ли там хорошо.</p><p>Также, я могу проверить ее как домашнее задание и вмержить (от \"merge\") тот вариант, который мне больше всех понравится.</p><p><br></p><p>Только после \"merge\" (который делаете не вы), изменения сохранятся в основную ветку (в нашем проекте это master).</p><p><br></p>",
+        "number": 20,
+        "createdAt": "2020-02-15T14:03:36.203Z",
+        "id": "5e47fa387dea9478b2b8b736"
+    },
+    {
+        "files": [
+            {
+                "_id": "5e43d99558d3402cd4a7fae9",
+                "mimetype": "image/png",
+                "destination": "/home/hillel/hillel-lms-api/uploads/files",
+                "filename": "s07e04-checkmate.png-file-1581504917520.png",
+                "extension": "png",
+                "author": "5da87a6a9dbbf4408216ff1a",
+                "originalname": "s07e04-checkmate.png",
+                "createdAt": "2020-02-12T10:55:17.522Z",
+                "updatedAt": "2020-02-12T10:55:17.522Z",
+                "file_id": 167300,
+                "__v": 0
+            }
+        ],
+        "coach_status": "assessed",
+        "_id": "5e43d9a058d3402cd4a7faea",
+        "lesson": {
+            "_id": "5e42eba54021fd5ddba1afa8",
+            "id": "5e42eba54021fd5ddba1afa8"
+        },
+        "title": "Checkmate",
+        "description": "<p>Измените код, написанный на занятии так, чтобы ячейки располагались в шахматном порядке,</p><p><br></p><p>Реализация на ваше усмотрение - ячейки могут быть:</p><p><br></p><ul><li>скрыты (дополнительные аттрибуты по условию)</li><li>не созданы (добавление условия при создании)</li><li>или удалены после создания (новый проход по всем элементам, получение с помощью .getDocumentById(id) и удаление через метод .remove()</li><li><br></li></ul><p>ссылка на Sandbox для работы</p><p><a href=\"https://codesandbox.io/s/snake-yfkfd\" target=\"_blank\">https://codesandbox.io/s/snake-yfkfd</a></p><p><br></p><p>образец во вложении</p><p><br></p>",
+        "number": 19,
+        "createdAt": "2020-02-12T10:55:28.600Z",
+        "id": "5e43d9a058d3402cd4a7faea"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e43d42c58d3402cd4a7fa1d",
+        "lesson": {
+            "_id": "5e42eba54021fd5ddba1afa8",
+            "id": "5e42eba54021fd5ddba1afa8"
+        },
+        "title": "chaining, flatten, concat",
+        "description": "<p>s07e01-rj-method-chaining.js</p><pre class=\"ql-syntax\" spellcheck=\"false\">const&nbsp;newReleases&nbsp;=&nbsp;[\n&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;70111470,\n&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"Die&nbsp;Hard\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/DieHard.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;4.0,\n&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[]\n&nbsp;&nbsp;},\n&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;654356453,\n&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"Bad&nbsp;Boys\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/BadBoys.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;5.0,\n&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[{&nbsp;id:&nbsp;432534,&nbsp;time:&nbsp;65876586&nbsp;}]\n&nbsp;&nbsp;},\n&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;65432445,\n&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"The&nbsp;Chamber\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/TheChamber.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;4.0,\n&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[]\n&nbsp;&nbsp;},\n&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;675465,\n&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"Fracture\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/Fracture.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;5.0,\n&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[{&nbsp;id:&nbsp;432534,&nbsp;time:&nbsp;65876586&nbsp;}]\n&nbsp;&nbsp;}\n];\n\n\nconst&nbsp;getGoodReleasesIds&nbsp;=&nbsp;function()&nbsp;{\n&nbsp;&nbsp;//&nbsp;------------&nbsp;INSERT&nbsp;CODE&nbsp;HERE!&nbsp;-----------------------------------\n&nbsp;&nbsp;//&nbsp;Используйте&nbsp;методы&nbsp;filter&nbsp;и&nbsp;map&nbsp;в&nbsp;цепочке&nbsp;(method&nbsp;chaining&nbsp;-&nbsp;запомните&nbsp;термин!)&nbsp;,&nbsp;чтобы&nbsp;получить&nbsp;id&nbsp;всех&nbsp;видео\n&nbsp;&nbsp;//&nbsp;с&nbsp;рейтингом&nbsp;5.0\n\n\n&nbsp;&nbsp;return&nbsp;newReleases&nbsp;//&nbsp;закончите&nbsp;это&nbsp;выражение\n&nbsp;&nbsp;//&nbsp;------------&nbsp;INSERT&nbsp;CODE&nbsp;HERE!&nbsp;-----------------------------------\n&nbsp;&nbsp;//&nbsp;Если&nbsp;не&nbsp;получается&nbsp;сделать&nbsp;за&nbsp;15&nbsp;минут&nbsp;прочтите&nbsp;эту&nbsp;статью&nbsp;(ENG)\n&nbsp;&nbsp;//&nbsp;https://gomakethings.com/chaining-array-methods-in-vanilla-js/\n}\n\n\n//&nbsp;Ожидаемый&nbsp;вывод:\n//&nbsp;[&nbsp;654356453,&nbsp;675465&nbsp;]\nconsole.log(getGoodReleasesIds());\n</pre><p><br></p><p><br></p><p><br></p><p>s07e02-rj-flatten.js</p><pre class=\"ql-syntax\" spellcheck=\"false\">const&nbsp;movieLists&nbsp;=&nbsp;[\n&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;\"New&nbsp;Releases\",\n&nbsp;&nbsp;&nbsp;&nbsp;videos:&nbsp;[\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;70111470,\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"Die&nbsp;Hard\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/DieHard.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;4.0,\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[]\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;654356453,\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"Bad&nbsp;Boys\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/BadBoys.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;5.0,\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[{&nbsp;id:&nbsp;432534,&nbsp;time:&nbsp;65876586&nbsp;}]\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;]\n&nbsp;&nbsp;},\n&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;\"Dramas\",\n&nbsp;&nbsp;&nbsp;&nbsp;videos:&nbsp;[\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;65432445,\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"The&nbsp;Chamber\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/TheChamber.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;4.0,\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[]\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;675465,\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"Fracture\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/Fracture.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;5.0,\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[{&nbsp;id:&nbsp;432534,&nbsp;time:&nbsp;65876586&nbsp;}]\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;]\n&nbsp;&nbsp;}\n];\n\n\nconst&nbsp;getAllMovieIds&nbsp;=&nbsp;function()&nbsp;{\n&nbsp;&nbsp;allVideoIdsInMovieLists&nbsp;=&nbsp;[];\n\n\n&nbsp;&nbsp;//&nbsp;------------&nbsp;&nbsp;&nbsp;INSERT&nbsp;CODE&nbsp;HERE!&nbsp;&nbsp;-----------------------------------\n&nbsp;&nbsp;//&nbsp;Используйте&nbsp;два&nbsp;вложенных&nbsp;цикла&nbsp;forEach&nbsp;для&nbsp;того,&nbsp;чтобы&nbsp;сложить&nbsp;все&nbsp;id&nbsp;елементов&nbsp;всех&nbsp;videos\n&nbsp;&nbsp;//&nbsp;из&nbsp;movieLists&nbsp;в&nbsp;плоский&nbsp;массив.\n&nbsp;&nbsp;//&nbsp;------------&nbsp;&nbsp;&nbsp;INSERT&nbsp;CODE&nbsp;HERE!&nbsp;&nbsp;-----------------------------------\n\n\n&nbsp;&nbsp;return&nbsp;allVideoIdsInMovieLists;\n\n\n}\n\n\n//&nbsp;Ожидаемый&nbsp;результат:\n//&nbsp;[&nbsp;70111470,&nbsp;654356453,&nbsp;65432445,&nbsp;675465&nbsp;]\nconsole.log(getAllMovieIds());\n\n</pre><p><br></p><p><br></p><p>s07e03-rj-concat.js</p><pre class=\"ql-syntax\" spellcheck=\"false\">//&nbsp;Напишите&nbsp;функцию&nbsp;concat&nbsp;(сокращение&nbsp;от&nbsp;concatenate),&nbsp;которая&nbsp;склеит\n//&nbsp;несколько&nbsp;массивов&nbsp;в&nbsp;один.\n\n\nconst&nbsp;concat&nbsp;=&nbsp;function(inputArrays)&nbsp;{\n&nbsp;&nbsp;const&nbsp;results&nbsp;=&nbsp;[];\n&nbsp;&nbsp;inputArrays.forEach(function(subArray)&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;------------&nbsp;INSERT&nbsp;CODE&nbsp;HERE!&nbsp;----------------------------\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;добавьте&nbsp;все&nbsp;элементы&nbsp;из&nbsp;каждого&nbsp;subArray&nbsp;в&nbsp;массив&nbsp;с&nbsp;результатами\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;------------&nbsp;INSERT&nbsp;CODE&nbsp;HERE!&nbsp;----------------------------\n&nbsp;&nbsp;});\n\n\n&nbsp;&nbsp;return&nbsp;results;\n};\n\n\n//&nbsp;ожидаемый&nbsp;результат&nbsp;\"[1,2,3,4,5,6,7,8,9]\"\nconsole.log(concat([&nbsp;[1,2,3],&nbsp;[4,5,6],&nbsp;[7,8,9]&nbsp;]));\n\n</pre>",
+        "number": 18,
+        "createdAt": "2020-02-12T10:32:12.357Z",
+        "id": "5e43d42c58d3402cd4a7fa1d"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e3eb93f41970e5f453bf43b",
+        "lesson": {
+            "_id": "5e3da5a5e805bb26eb063819",
+            "id": "5e3da5a5e805bb26eb063819"
+        },
+        "title": "Реализуйте Find, Every, Some",
+        "description": "<p>Пройдя по ссылке https://codesandbox.io/s/goofy-goldwasser-qgrqd</p><p>и нажав fork в правом верхнем углу вы можете создать свою песочницу.</p><p><br></p><p>Реализуйте функции</p><p>find, every и some</p><p><br></p><p>С помощью .forEach не получится выйти из функции досрочно, так что используйте обычный for</p><p><br></p><p>Для проверки поведения используйте оригинальные одноименные методы массивов.</p><p><br></p><p>Обратите внимание на поведение методов при работе с пустым массивом.</p>",
+        "number": 17,
+        "createdAt": "2020-02-08T13:35:59.448Z",
+        "id": "5e3eb93f41970e5f453bf43b"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e3b1cc85a8af0569a9cb3bd",
+        "lesson": {
+            "_id": "5e39b1252cb148057a1eaa6f",
+            "id": "5e39b1252cb148057a1eaa6f"
+        },
+        "title": "s05e05 метод Map",
+        "description": "<pre class=\"ql-syntax\" spellcheck=\"false\">/**\n&nbsp;*&nbsp;В&nbsp;этом&nbsp;задании,&nbsp;с&nbsp;помощью&nbsp;метода&nbsp;массива&nbsp;.forEach&nbsp;мы&nbsp;реализуем&nbsp;другой,&nbsp;один&nbsp;из\n&nbsp;*&nbsp;наиболее&nbsp;частоиспользуемых&nbsp;методов&nbsp;массива&nbsp;-&nbsp;.map,&nbsp;но&nbsp;не&nbsp;сразу.\n&nbsp;*&nbsp;Во&nbsp;всем&nbsp;задании&nbsp;используйте&nbsp;методы&nbsp;массива&nbsp;.forEach&nbsp;и&nbsp;.push\n&nbsp;*/\n\n\n/**\n&nbsp;*&nbsp;Создайте&nbsp;функцию,&nbsp;которая&nbsp;принимает&nbsp;на&nbsp;вход&nbsp;массив&nbsp;произвольных&nbsp;элементов.\n&nbsp;*&nbsp;Далее,&nbsp;создает&nbsp;новый&nbsp;пустой&nbsp;массив,&nbsp;заполняет&nbsp;его&nbsp;элементами&nbsp;из&nbsp;входящего&nbsp;и&nbsp;возвращает.\n&nbsp;*\n&nbsp;*&nbsp;@param&nbsp;{any[]}&nbsp;inputArray&nbsp;-&nbsp;входящий&nbsp;массив\n&nbsp;*&nbsp;@returns&nbsp;{any[]}\n&nbsp;*/\nfunction&nbsp;copy(inputArray)&nbsp;{\n\n\n}\n\n\n/**\n&nbsp;*&nbsp;Напишите&nbsp;улучшенную&nbsp;версию&nbsp;функции&nbsp;copy,&nbsp;которая&nbsp;кроме&nbsp;копирования\n&nbsp;*&nbsp;будет&nbsp;умножать&nbsp;все&nbsp;элементы&nbsp;на&nbsp;2\n&nbsp;*&nbsp;@param&nbsp;{number[]}&nbsp;inputArray&nbsp;-&nbsp;входящий&nbsp;массив\n&nbsp;*&nbsp;@returns&nbsp;{number[]}\n&nbsp;*/\nfunction&nbsp;copyAndMultiply(inputArray)&nbsp;{\n\n\n}\n\n\n/**\n&nbsp;*&nbsp;Функция&nbsp;-&nbsp;это&nbsp;значение,&nbsp;и&nbsp;его&nbsp;тоже&nbsp;можно&nbsp;передавать.\n&nbsp;*&nbsp;Это&nbsp;набор&nbsp;инструкций,&nbsp;который&nbsp;можно&nbsp;будет&nbsp;выполнить&nbsp;позже.\n&nbsp;*\n&nbsp;*&nbsp;Напишите&nbsp;функцию&nbsp;&lt;map&gt;\n&nbsp;*&nbsp;Функция&nbsp;должна&nbsp;принимать&nbsp;массив&nbsp;элементов&nbsp;и&nbsp;вторым&nbsp;аргументом&nbsp;-&nbsp;функцию,\n&nbsp;*&nbsp;которую&nbsp;примените&nbsp;к&nbsp;каждому&nbsp;элементу,&nbsp;вместо&nbsp;умножения&nbsp;из&nbsp;прошлого&nbsp;примера.\n&nbsp;*\n&nbsp;*&nbsp;@param&nbsp;{any[]}&nbsp;inputArray\n&nbsp;*&nbsp;@param&nbsp;{function}&nbsp;operation\n&nbsp;*&nbsp;@returns&nbsp;{any[]}\n&nbsp;*/\nfunction&nbsp;map(inputArray,&nbsp;operation)&nbsp;{\n\n\n}\n\n\n//&nbsp;Пример&nbsp;использования&nbsp;функции&nbsp;map,&nbsp;после&nbsp;того,&nbsp;как&nbsp;она&nbsp;будет&nbsp;готова:\nfunction&nbsp;square(x)&nbsp;{\n&nbsp;&nbsp;return&nbsp;x&nbsp;*&nbsp;x;\n}\nconst&nbsp;numbers&nbsp;=&nbsp;[1,&nbsp;5,&nbsp;10];\nconst&nbsp;squares&nbsp;=&nbsp;map(numbers,&nbsp;square);\n//&nbsp;[1,&nbsp;25,&nbsp;100];\n\n\n</pre>",
+        "number": 16,
+        "createdAt": "2020-02-05T19:51:36.992Z",
+        "id": "5e3b1cc85a8af0569a9cb3bd"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e3b1c935a8af0569a9cb39a",
+        "lesson": {
+            "_id": "5e39b1252cb148057a1eaa6f",
+            "id": "5e39b1252cb148057a1eaa6f"
+        },
+        "title": "Projection",
+        "description": "<pre class=\"ql-syntax\" spellcheck=\"false\">/**\n&nbsp;*&nbsp;Проекцией&nbsp;при&nbsp;работе&nbsp;с&nbsp;данными&nbsp;называется&nbsp;операция,&nbsp;при&nbsp;которой&nbsp;из&nbsp;большой&nbsp;таблицы\n&nbsp;*&nbsp;мы&nbsp;берем&nbsp;только&nbsp;некоторые&nbsp;поля&nbsp;из&nbsp;каждого&nbsp;элемента.\n&nbsp;*&nbsp;Ниже&nbsp;вы&nbsp;найдете&nbsp;массив&nbsp;объектов&nbsp;(таблицу)&nbsp;с&nbsp;данными&nbsp;по&nbsp;фильмам.\n&nbsp;*&nbsp;Необходимо&nbsp;создать&nbsp;новый&nbsp;массив,&nbsp;в&nbsp;котором&nbsp;вместо&nbsp;полновесных&nbsp;элементов&nbsp;будут\n&nbsp;*&nbsp;упрощенные&nbsp;объекты,&nbsp;состоящие&nbsp;только&nbsp;из&nbsp;id&nbsp;и&nbsp;title\n&nbsp;*\n&nbsp;*&nbsp;Добавьте&nbsp;объект,&nbsp;состоящий&nbsp;из&nbsp;{&nbsp;id,&nbsp;title&nbsp;}&nbsp;для&nbsp;каждого&nbsp;видео&nbsp;в&nbsp;массив&nbsp;videoAndTitlePairs\n&nbsp;*/\n\n\nconst&nbsp;newReleases&nbsp;=&nbsp;[\n&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;70111470,\n&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"Die&nbsp;Hard\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/DieHard.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;[4.0],\n&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[]\n&nbsp;&nbsp;},\n&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;654356453,\n&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"Bad&nbsp;Boys\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/BadBoys.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;[5.0],\n&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[{&nbsp;id:&nbsp;432534,&nbsp;time:&nbsp;65876586&nbsp;}]\n&nbsp;&nbsp;},\n&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;65432445,\n&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"The&nbsp;Chamber\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/TheChamber.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;[4.0],\n&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[]\n&nbsp;&nbsp;},\n&nbsp;&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;\"id\":&nbsp;675465,\n&nbsp;&nbsp;&nbsp;&nbsp;\"title\":&nbsp;\"Fracture\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"boxart\":&nbsp;\"http://cdn-0.nflximg.com/images/2891/Fracture.jpg\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"uri\":&nbsp;\"http://api.netflix.com/catalog/titles/movies/70111470\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"rating\":&nbsp;[5.0],\n&nbsp;&nbsp;&nbsp;&nbsp;\"bookmark\":&nbsp;[{&nbsp;id:&nbsp;432534,&nbsp;time:&nbsp;65876586&nbsp;}]\n&nbsp;&nbsp;}\n],\nvideoAndTitlePairs&nbsp;=&nbsp;[];\n\n\n//&nbsp;------------&nbsp;INSERT&nbsp;CODE&nbsp;HERE!&nbsp;-----------------------------------\n//&nbsp;Используйте&nbsp;метод&nbsp;forEach&nbsp;для&nbsp;сбора&nbsp;{id,&nbsp;title}&nbsp;пар&nbsp;из&nbsp;каждого&nbsp;видео.\n//&nbsp;Положите&nbsp;результаты&nbsp;в&nbsp;массив&nbsp;videoAndTitlePairs&nbsp;используя&nbsp;метод&nbsp;push()\n//&nbsp;------------&nbsp;INSERT&nbsp;CODE&nbsp;HERE!&nbsp;-----------------------------------\n\n\nconsole.log(videoAndTitlePairs);\n</pre>",
+        "number": 15,
+        "createdAt": "2020-02-05T19:50:43.868Z",
+        "id": "5e3b1c935a8af0569a9cb39a"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e3ab0685a8af0569a9c9bf6",
+        "lesson": {
+            "_id": "5e39b1252cb148057a1eaa6f",
+            "id": "5e39b1252cb148057a1eaa6f"
+        },
+        "title": "Повторяем теорию",
+        "description": "<p>A.</p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">/**\n&nbsp;*&nbsp;Какие&nbsp;значения&nbsp;становятся&nbsp;\"false\",&nbsp;в&nbsp;процессе&nbsp;приведения&nbsp;к\n&nbsp;*&nbsp;логическому&nbsp;типу&nbsp;(Boolean)?\n&nbsp;*\n&nbsp;*&nbsp;Заполните&nbsp;_массивы_&nbsp;значениями.\n&nbsp;*/\n\n//&nbsp;Значения&nbsp;типа&nbsp;Number\nconst&nbsp;falseNumberValues&nbsp;=&nbsp;[...];\n\n//&nbsp;Значения&nbsp;типа&nbsp;Object\nconst&nbsp;falseObjectValues&nbsp;=&nbsp;[...];\n\n//&nbsp;Значения&nbsp;типа&nbsp;String\nconst&nbsp;falseStringValues&nbsp;=&nbsp;[...];\n\n//&nbsp;Другие&nbsp;значения\nconst&nbsp;otherFalseValues&nbsp;=&nbsp;[...];\n\n</pre><p><br></p><p>B.</p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">//&nbsp;что&nbsp;выведется&nbsp;на&nbsp;экран&nbsp;и&nbsp;почему?\nvar&nbsp;text&nbsp;=&nbsp;'outside';\nfunction&nbsp;logIt(){\n&nbsp;&nbsp;&nbsp;&nbsp;console.log(text);\n&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;text&nbsp;=&nbsp;'inside';\n};\nlogIt();\n\n</pre><p><br></p><p>C.</p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">/**\n&nbsp;*&nbsp;@param&nbsp;{string[]}&nbsp;lines&nbsp;-&nbsp;array&nbsp;of&nbsp;strings\n&nbsp;*/\nfunction&nbsp;addLine(lines)&nbsp;{\n&nbsp;&nbsp;lines.push('Line&nbsp;'&nbsp;+&nbsp;lines.length);\n}\n\nconst&nbsp;mainPageLines&nbsp;=&nbsp;['Line&nbsp;1',&nbsp;'Line&nbsp;2',&nbsp;'Line&nbsp;3'];\n\naddLine(mainPageLines);\naddLine(mainPageLines);\n\n//&nbsp;Сколько&nbsp;элементов&nbsp;выведется&nbsp;в&nbsp;консоль?&nbsp;Объясните&nbsp;ваш&nbsp;ответ.\nconsole.log(mainPageLines);\n\n</pre>",
+        "number": 14,
+        "createdAt": "2020-02-05T12:09:12.878Z",
+        "id": "5e3ab0685a8af0569a9c9bf6"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e359107e7218d01776830f4",
+        "lesson": {
+            "_id": "5e346b254621113a2657633b",
+            "id": "5e346b254621113a2657633b"
+        },
+        "title": "forEach",
+        "description": "<p>Пора знакомиться с первым методом массива - forEach.</p><p><a href=\"https://learn.javascript.ru/array-methods#perebor-foreach\" target=\"_blank\">https://learn.javascript.ru/array-methods#perebor-foreach</a></p><p><br></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">const names = [\"Ben\", \"Jafar\", \"Matt\", \"Priya\", \"Brian\"];\n</pre><p><br></p><p><br></p><ol><li>Выведете в консоль элементы массива с помощью <strong>for</strong></li><li>Сделайте то же самое, с помощью метода <strong>forEach</strong></li></ol><p><br></p><p>NOTE: forEach позволяет нам описать, какие действия мы хотим произвести с <strong>каждым </strong>элементом массива, но скрывает (делает за нас) перебор элементов</p><p><br></p><p>Можно как определить функцию заранее и передать как аргумент в метод forEach</p><p><br></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">function print(...) {\n  ...\n}\n\n['item1', 'item2'].forEach(print);\n</pre><p><br></p><p>или описать функцию без имени (анонимную) прямо в вызове forEach</p><p><br></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">['item1', 'item2'].forEach(function(...) {\n  ...\n});\n</pre>",
+        "number": 13,
+        "createdAt": "2020-02-01T14:53:59.150Z",
+        "id": "5e359107e7218d01776830f4"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e357984e7218d0177682e50",
+        "lesson": {
+            "_id": "5e346b254621113a2657633b",
+            "id": "5e346b254621113a2657633b"
+        },
+        "title": "Борьба с несогласными",
+        "description": "<p>Напишите функцию, которая вернет переданную в нее строку, удалив все гласные буквы (English please).</p><p>Подсказки будут позже. Чем раньше напишете - тем выше балл.</p><p><br></p>",
+        "number": 12,
+        "createdAt": "2020-02-01T13:13:40.319Z",
+        "id": "5e357984e7218d0177682e50"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e35779483b1c229c40f3211",
+        "lesson": {
+            "_id": "5e346b254621113a2657633b",
+            "id": "5e346b254621113a2657633b"
+        },
+        "title": "Поломалось!",
+        "description": "<p>Почините функции</p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">function&nbsp;factorial(factorialBase)&nbsp;{\n&nbsp;&nbsp;let&nbsp;result&nbsp;=&nbsp;1;\n&nbsp;&nbsp;for&nbsp;(let&nbsp;i&nbsp;=&nbsp;1;&nbsp;i&nbsp;&lt;=&nbsp;factorialBase;&nbsp;i++)&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;result&nbsp;*&nbsp;i;\n&nbsp;&nbsp;}\n}\n\nconsole.log(factorial(5));\n</pre><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">function&nbsp;countLetters(message,&nbsp;letter)&nbsp;{\n&nbsp;&nbsp;let&nbsp;result&nbsp;=&nbsp;0;\n&nbsp;&nbsp;for&nbsp;(let&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;message.length;&nbsp;i++)&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(message[i]&nbsp;=&nbsp;letter)&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;result&nbsp;+&nbsp;1;\n&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;}\n&nbsp;&nbsp;return&nbsp;result;\n}\n\nconst&nbsp;message&nbsp;=&nbsp;'Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipiscing&nbsp;elit,&nbsp;sed&nbsp;do&nbsp;eiusmod&nbsp;tempor&nbsp;incididunt&nbsp;ut&nbsp;labore&nbsp;et&nbsp;dolore&nbsp;magna&nbsp;aliqua.';\nconsole.log(countLetters(message,&nbsp;'i'));\n</pre>",
+        "number": 11,
+        "createdAt": "2020-02-01T13:05:24.537Z",
+        "id": "5e35779483b1c229c40f3211"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e31b2defcbbe1718fc0b8b7",
+        "lesson": {
+            "_id": "5e3076a4c556167c1a615de6",
+            "id": "5e3076a4c556167c1a615de6"
+        },
+        "title": "Считаем буквы",
+        "description": "<pre class=\"ql-syntax\" spellcheck=\"false\">// Посчитайте количество букв 'i' в строке\nconst message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';\n\n\n// Обратиться к каждому символу (букве) можно используя квадратные скобки\n// Например, это 'L', так как многое в цифровом мире начинается с ноля.\nconst firstCharacter = message[0];\n// переменная firstCharacter вам не нужна и тут только для примера\n\n// Длину строки можно узнать из свойства length\nconst messageLength = message.length;\n\n\n// начнем считать с ноля\nconst aLetterCount = 0;\n\n\n// А тут можно написать цикл, который переберет все буквы по очереди и если это 'i' - увеличит счетчик.\n\n\n// вывод результата\nconsole.log(`Нашлось ${aLetterCount} букв 'i'.`);\n\n\n</pre>",
+        "number": 10,
+        "createdAt": "2020-01-29T16:29:18.318Z",
+        "id": "5e31b2defcbbe1718fc0b8b7"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e31ad86a0fea63dd09b9617",
+        "lesson": {
+            "_id": "5e3076a4c556167c1a615de6",
+            "id": "5e3076a4c556167c1a615de6"
+        },
+        "title": "Вздыхатель",
+        "description": "<p>Написать программу, которая будет вздыхать, после того как пользователь введет количество дней, оставшееся до выходных.</p><p><br></p><p>Чем больше дней осталось - тем более горестный должен быть вздох.</p><p><br></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">// ввод данных пользователем\nconst daysTillWeekend = Number(prompt('Сколько дней до выходных?'));\n\nlet sighMessage = 'О';\n\n// Здесь напишите ваш цикл, который добавляет '-хо' \n// к sighMessage за каждый оставшийся день\n\n\n// Здесь напишите условие, которое добавит к результату радостный\n// восклицательный знак, если выходные уже наступили\n\n\n// выведите результат с помощью alert\n\n</pre>",
+        "number": 9,
+        "createdAt": "2020-01-29T16:06:30.936Z",
+        "id": "5e31ad86a0fea63dd09b9617"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e31aa88a6135f16e350afb2",
+        "lesson": {
+            "_id": "5e3076a4c556167c1a615de6",
+            "id": "5e3076a4c556167c1a615de6"
+        },
+        "title": "Факториал",
+        "description": "<p>Создайте программу, которая будет считать факториал числа, введенного пользователем</p><p>Что такое факториал можно почитать тут: https://en.wikipedia.org/wiki/Factorial</p><p><br></p><p>Например, факториaл 5 равен 5 * 4 * 3 * 2 * 1 = 120</p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">// ввод данных\nconst factorialBase = Number(prompt('Введите число'));\n\n\n// Ваш код тут\n\n\n// вывод для пользователя с помощью alert;\nalert(result);\n</pre>",
+        "number": 8,
+        "createdAt": "2020-01-29T15:53:44.118Z",
+        "id": "5e31aa88a6135f16e350afb2"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e313b37463cf42a3622d638",
+        "lesson": {
+            "_id": "5e3076a4c556167c1a615de6",
+            "id": "5e3076a4c556167c1a615de6"
+        },
+        "title": "Замените пустые квадраты скобками, операторами или другими символами.",
+        "description": "<p>Считаем, что пременные a и b, где необходимо, определены раньше.</p><p>Такие небольшие ответы прикладывайте прямо сюда. Нет необходимости создавать codepen или заливать на github.</p><p><br></p><p>1. В условии <strong>if</strong></p><pre class=\"ql-syntax\" spellcheck=\"false\">if ☐a ☐☐☐ b☐ ☐\n  console.log☐'a равно b'☐;\n☐\n</pre><p><br></p><p>2. В операторе <strong>while </strong></p><pre class=\"ql-syntax\" spellcheck=\"false\">while ☐a &gt; b☐ ☐\n  console.log(☐b все еще меньше a☐);\n  b ☐ b ☐ 10;\n☐\n</pre><p><br></p><p>3. В условии <strong>if</strong> с блоком <strong>else</strong></p><pre class=\"ql-syntax\" spellcheck=\"false\">if ☐a ☐ b☐ ☐\n  console.log☐'a больше b'☐;\n☐ else ☐\n  console.log☐'b не меньше a'☐;\n☐\n</pre><p><br></p><p>4. В операторе <strong>for</strong></p><pre class=\"ql-syntax\" spellcheck=\"false\">for (let a = 0☐ a &lt; 10☐ a = a + 1) ☐\n  // этот блок выполнится 10 раз\n  b = b + a☐\n☐\n</pre><p><br></p><p><br></p>",
+        "number": 7,
+        "createdAt": "2020-01-29T07:58:47.926Z",
+        "id": "5e313b37463cf42a3622d638"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e2c035e00fcc067c1e7ed3d",
+        "lesson": {
+            "_id": "5e2b30a4f6617027388a6bca",
+            "id": "5e2b30a4f6617027388a6bca"
+        },
+        "title": "Телефон для Пети",
+        "description": "<pre class=\"ql-syntax\" spellcheck=\"false\">// У Петра есть некоторое количество денег\nconst money = 1000;\n\n\n// цена телефона, который он хочет купить\nconst price = 12000;\n\n\n// максимальное количество месяцев рассрочки\nconst loanMaxMonth = 10;\n\n\n// a. Вычислите минимальный ежемесячный платеж используя переменные\n// описанные выше и оператор деления.\nconst monthlyPayment = ВАШ_КОД_ТУТ;\n\n\n// b. Может ли Петр получить телефон сегодня,\n// если первый взнос надо внести во время покупки?\n// Запишите вычисление с помощью переменных, операторов деления и сравнения.\nconst canBuyNow = ВАШ_КОД_ТУТ;\n\n\n// 3. какие типы данных сохранились в переменные monthlyPayment и canBuyNow?\n// boolean | number | string\n</pre>",
+        "number": 6,
+        "createdAt": "2020-01-25T08:59:10.037Z",
+        "id": "5e2c035e00fcc067c1e7ed3d"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e2c02e999c72b67c7d31aac",
+        "lesson": {
+            "_id": "5e2b30a4f6617027388a6bca",
+            "id": "5e2b30a4f6617027388a6bca"
+        },
+        "title": "Гора мелочи",
+        "description": "<p>Сколько раз можно проехать в метро за 2 тысячи монет по 25коп?</p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">const metroTickets = ВАШ_КОД_ТУТ;\n</pre>",
+        "number": 5,
+        "createdAt": "2020-01-25T08:57:13.042Z",
+        "id": "5e2c02e999c72b67c7d31aac"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e2c029400fcc067c1e7ed1a",
+        "lesson": {
+            "_id": "5e2b30a4f6617027388a6bca",
+            "id": "5e2b30a4f6617027388a6bca"
+        },
+        "title": "Автобусная остановка",
+        "description": "<p>Автобус&nbsp;ездит&nbsp;по&nbsp;маршруту&nbsp;с&nbsp;6&nbsp;утра&nbsp;до&nbsp;23:00&nbsp;каждые&nbsp;20&nbsp;минут.</p><p>Сколько&nbsp;раз&nbsp;автобус&nbsp;останавливается&nbsp;на&nbsp;остановке&nbsp;(в&nbsp;одну&nbsp;сторону)?</p><p><br></p><p>запишите решение используя числа из условия и существующую константу</p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">const MINUTES_IN_HOUR = 60;\n\nconst&nbsp;bussesPasses&nbsp;=&nbsp;ВАШ_КОД_ТУТ;\n</pre>",
+        "number": 4,
+        "createdAt": "2020-01-25T08:55:48.122Z",
+        "id": "5e2c029400fcc067c1e7ed1a"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e2c01804313e67a2af622c0",
+        "lesson": {
+            "_id": "5e2b30a4f6617027388a6bca",
+            "id": "5e2b30a4f6617027388a6bca"
+        },
+        "title": "Cколько прошло _секунд_ с полуночи до 13:45?",
+        "description": "<p>Запишите решение вместо ВАШ_КОД_ТУТ используя числа 13, 45 и готовые константы.</p><p><br></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">const MINUTES_IN_HOUR = 60;\nconst SECONDS_IN_MINUTE = 60;\n\nconst secondsFromMidnight = ВАШ_КОД_ТУТ;\n</pre>",
+        "number": 3,
+        "createdAt": "2020-01-25T08:51:12.878Z",
+        "id": "5e2c01804313e67a2af622c0"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e2c003100fcc067c1e7ecdc",
+        "lesson": {
+            "_id": "5e2b30a4f6617027388a6bca",
+            "id": "5e2b30a4f6617027388a6bca"
+        },
+        "title": "Решите в уме",
+        "description": "<p><span style=\"color: rgb(136, 136, 119);\">найдите&nbsp;значения&nbsp;выражений&nbsp;не&nbsp;запуская&nbsp;код</span></p><p><br></p><pre class=\"ql-syntax\" spellcheck=\"false\">90&nbsp;-&nbsp;9&nbsp;*&nbsp;10&nbsp;+&nbsp;10\n0&nbsp;-&nbsp;70&nbsp;-&nbsp;100&nbsp;-&nbsp;30&nbsp;-&nbsp;0\n10&nbsp;+&nbsp;20&nbsp;&gt;&nbsp;30\n50&nbsp;&gt;=&nbsp;10&nbsp;*&nbsp;5\n60&nbsp;/&nbsp;0\n10&nbsp;+&nbsp;7&nbsp;-&nbsp;5\n10&nbsp;+&nbsp;(7&nbsp;-&nbsp;5)\n</pre>",
+        "number": 2,
+        "createdAt": "2020-01-25T08:45:37.113Z",
+        "id": "5e2c003100fcc067c1e7ecdc"
+    },
+    {
+        "files": [],
+        "coach_status": "assessed",
+        "_id": "5e2832c4a297d8365a3fba0e",
+        "lesson": {
+            "_id": "5e273c25505a734eb0429552",
+            "id": "5e273c25505a734eb0429552"
+        },
+        "title": "Зарегистрировать github аккаунт",
+        "description": "<p>Зарегистрируйте аккаунт на github.com. (конечно если у вас нет каких-либо убеждений против этого).</p><p><br></p><p>Этот аккаунт можно будет использовать для входа на ресурсы для разработчиков без регистрации (также как, используя google аккаунт).</p><p><br></p><p>NOTE: github не то же самое, что и git.</p><p><br></p><p>git - opensource программа, которая стала стандартом в хранении кода</p><p><br></p><p>github - сайт/сервис для хранения данных с помощью гит. недавно куплен Microsoft.</p>",
+        "number": 1,
+        "createdAt": "2020-01-22T11:32:20.893Z",
+        "id": "5e2832c4a297d8365a3fba0e"
+    }
+]
