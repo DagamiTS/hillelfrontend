@@ -4,7 +4,7 @@
  * @returns Promise<*>
  */
 export function createResolved(value) {
-
+  return Promise.resolve(value);
 }
 
 
@@ -14,7 +14,7 @@ export function createResolved(value) {
  * @returns Promise<*>
  */
 export function createRejected(error) {
-
+  return Promise.reject(error);
 }
 
 /**
@@ -25,7 +25,12 @@ export function createRejected(error) {
  * @returns Promise<void>
  */
 export function createResolvedOrRejected(value) {
-
+  return new Promise( (resolve, reject) => {
+    if (value) {
+      resolve(value);
+    }
+    reject();
+  });
 }
 
 /**
@@ -37,5 +42,7 @@ export function createResolvedOrRejected(value) {
  * @returns Promise<void>
  */
 export function delay(ms) {
-
+  return new Promise( (resolve, reject) => {
+    setTimeout(() => resolve(), ms);
+  });
 }
