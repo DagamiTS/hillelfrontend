@@ -7,7 +7,7 @@ const START_Y = 10;
 let stepLengthMs = 200;
 
 const snake = {
-  maxLength: 5
+  maxLength: 5,
   body: [],
   direction: 'right',
   lastStepDirection: 'right',

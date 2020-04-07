@@ -15,7 +15,9 @@ class Mechanic {
       this.wheel.classList.add('taken');
     }
     const timeout = 1000 + Math.random() * 6000;
-    setTimeout(() => this.ready(), timeout);
+    this.promise = new Promise( (resolve) => {
+      setTimeout(() => resolve(), timeout);
+    }).then( () => this.ready());
   }
 
   ready() {
@@ -30,14 +32,19 @@ class Mechanic {
 }
 
 function createMechanics() {
+  const result = [];
   document.querySelectorAll('.mechanic')
-    .forEach(node => new Mechanic(node));
+    .forEach( element => result.push(new Mechanic(element)));
+  return result;
 }
 
 function main() {
-  createMechanics();
+  const mech = createMechanics().map( element => element.promise);
 
-  /** YOUR CODE HERE */
+  Promise.all(mech)
+    .then( () => {
+      document.querySelector('#pit-stop').classList.add('go');
+    });
 
 }
 
